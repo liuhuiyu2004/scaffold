@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/aspect/package-info.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/configuration/package-info.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/dao/package-info.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/properties/package-info.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/repository/package-info.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/service/package-info.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/package-info.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/entity/package-info.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/view/package-info.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,16 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserLogin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/annotation/UserLogin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package-info.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/package-info.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package-info.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package-info.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/package-info.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -112,18 +97,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddressRoutingUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/AddressRoutingUtil.java">
+      <file leaf-file-name="package-info.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/entity/package-info.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#getFullAddress#0;class#AddressRoutingUtil#0" expanded="false" />
-                <element signature="method#getFullAddress#0;class#AddressRoutingUtil#0" expanded="false" />
-                <element signature="docComment;method#getFullAddress#1;class#AddressRoutingUtil#0" expanded="false" />
-                <element signature="method#getFullAddress#1;class#AddressRoutingUtil#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package-info.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/view/package-info.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -244,6 +233,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="scaffold" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scaffold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scaffold" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="scaffold" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -375,7 +373,7 @@
       <workItem from="1594178545183" duration="2971000" />
       <workItem from="1594259294309" duration="83000" />
       <workItem from="1594259416051" duration="3171000" />
-      <workItem from="1594339098652" duration="2492000" />
+      <workItem from="1594339098652" duration="2538000" />
     </task>
     <task id="LOCAL-00001" summary="加入字节码工具类&#10;加入访问地址工具类">
       <created>1594341386649</created>
@@ -398,11 +396,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594341857445</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="完善项目结构">
+      <created>1594341970908</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594341970908</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8717000" />
+    <option name="totallyTimeSpent" value="8763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -456,38 +461,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/DateTimeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="105" column="7" lean-forward="true" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
-          <folding>
-            <element signature="docComment;class#DateTimeUtil#0" expanded="false" />
-            <element signature="docComment;method#stringToLocalDateTime#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="method#stringToLocalDateTime#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="docComment;method#stringToLocalDate#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="method#stringToLocalDate#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="docComment;method#stringToLocalTime#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="method#stringToLocalTime#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="docComment;method#localDateTimeToMilli#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="method#localDateTimeToMilli#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="docComment;method#localDateToMilli#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="method#localDateToMilli#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="docComment;method#localTimeToMilli#0;class#DateTimeUtil#0" expanded="false" />
-            <element signature="method#localTimeToMilli#0;class#DateTimeUtil#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/controller/AbsBaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="48" column="18" lean-forward="false" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/factory/HttpFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -978,6 +951,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/entity/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/view/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
