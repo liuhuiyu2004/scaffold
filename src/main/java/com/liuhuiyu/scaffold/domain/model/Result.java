@@ -1,4 +1,4 @@
-package com.liuhuiyu.scaffold.model;
+package com.liuhuiyu.scaffold.domain.model;
 
 /**
  * @author LiuHuiYu
