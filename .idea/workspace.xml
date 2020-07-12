@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新 包注释 信息">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-company.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffold.iml" beforeDir="false" afterPath="$PROJECT_DIR$/scaffold.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/App.java" afterDir="false" />
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="加入banner设置">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,8 @@
         <option value="Class" />
         <option value="JUnit3 Test Class" />
         <option value="package-info" />
+        <option value="FxmlFile" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -55,6 +52,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
@@ -73,6 +71,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.liuhuiyu.scaffold.utils" />
       <recent name="com.liuhuiyu.scaffold.utils.repeat_wheel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources\static" />
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
@@ -298,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594518502484</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="加入banner设置">
+      <created>1594522145390</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594522145390</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -313,17 +322,18 @@
     <MESSAGE value="作废重写轮子，标注替代方法" />
     <MESSAGE value="更新本地日期时间工具" />
     <MESSAGE value="更新 包注释 信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新 包注释 信息" />
+    <MESSAGE value="加入banner设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入banner设置" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1162" y="562" key="#Notifications/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594514858264" />
-    <state x="798" y="264" key="CommitChangelistDialog2" timestamp="1594520449517">
+    <state x="798" y="264" key="CommitChangelistDialog2" timestamp="1594522144114">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="798" y="264" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594520449517" />
+    <state x="798" y="264" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594522144114" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1594514789687">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
