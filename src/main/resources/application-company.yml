@@ -1,0 +1,47 @@
+spring:
+  # ================================================
+  #             tomcat多域名-数据库重名支持
+  # ================================================
+  jmx:
+    enabled: false
+  # ================================================
+  #             datasource数据库设定
+  # ================================================
+  datasource:
+    #region 防止断链
+    test-while-idle: true #验证连接的有效性
+    test-on-borrow: true  #获取连接时候验证，会影响性能
+    validation-query: SELECT 1 FROM DUAL
+    #空闲连接回收的时间间隔，与test-while-idle一起使用，设置5分钟
+    time-between-eviction-runs-millis: 300000
+    #连接池空闲连接的有效时间 ，设置30分钟
+    min-evictable-idle-time-millis: 1800000
+
+    bySearch:
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      timeBetweenEvictionRunsMillis: 3600000
+    #endregion
+    driver-class-name: com.mysql.cj.jdbc.Driver #com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/car_distribution?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false #?useUnicode=true&characterEncoding=utf8mb4&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: root
+    tomcat:
+      max-wait: 200
+      validation-query: "SELECT 1"
+      test-on-borrow: true
+      initial-size: 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data:
+    cassandra:
+      ssl: false
+#mysystemproperties: #zid
+#  commonResourceAddress: #http://qn.liuhuiyu.com  #通用框架起始地址
+#  layuiAddress: /layui #http://qn.liuhuiyu.com/layui_2_5_4 #layui框架地址
+#  webResourceAddress: #http://qn.liuhuiyu.com/distribution_cg #当前程序起始地址
+
+server:
+  port: 8087

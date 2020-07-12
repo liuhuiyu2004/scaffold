@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新本地日期时间工具">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/annotation/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/constant/enums/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/controller/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/model/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/exception/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/factory/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/package-info.java" afterDir="false" />
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新 包注释 信息">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-company.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffold.iml" beforeDir="false" afterPath="$PROJECT_DIR$/scaffold.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/aspect/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/aspect/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/configuration/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/configuration/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/constant/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/constant/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/dao/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/dao/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/view/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/view/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/properties/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/properties/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/repository/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/repository/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/service/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/service/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/package-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,12 +44,6 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
-  </component>
   <component name="ProjectId" id="1eZ29TUszVdfiAFKjJPz1vG6Pa7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -80,12 +62,12 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -95,10 +77,27 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.DateTimeUtilTest">
+  <component name="RunManager" selected="Application.App">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.liuhuiyu.scaffold.App" />
+      <module name="scaffold" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.liuhuiyu.scaffold.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,22 +136,6 @@
       <option name="MAIN_CLASS_NAME" value="com.liuhuiyu.scaffold.utils.DateTimeUtilTest" />
       <option name="METHOD_NAME" value="testStringToLocalDateTime" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="scaffold" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.liuhuiyu.scaffold.utils.repeat_wheel.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.liuhuiyu.scaffold.utils.repeat_wheel" />
-      <option name="MAIN_CLASS_NAME" value="com.liuhuiyu.scaffold.utils.repeat_wheel.StringUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -236,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.DateTimeUtilTest" />
         <item itemvalue="JUnit.DateTimeUtilTest.testStringToLocalDateTime" />
         <item itemvalue="JUnit.StringUtilTest.testReplace" />
         <item itemvalue="JUnit.StringUtilTest.testReplace" />
-        <item itemvalue="JUnit.StringUtilTest.s" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594518027817</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="更新 包注释 信息">
+      <created>1594518502484</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594518502484</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -322,94 +312,69 @@
     <MESSAGE value="完善项目结构" />
     <MESSAGE value="作废重写轮子，标注替代方法" />
     <MESSAGE value="更新本地日期时间工具" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新本地日期时间工具" />
+    <MESSAGE value="更新 包注释 信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 包注释 信息" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1162" y="562" key="#Notifications/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594514858264" />
-    <state x="798" y="264" key="CommitChangelistDialog2" timestamp="1594518026688">
+    <state x="798" y="264" key="CommitChangelistDialog2" timestamp="1594520449517">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="798" y="264" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594518026688" />
+    <state x="798" y="264" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594520449517" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1594514789687">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594514789687" />
-    <state width="1258" height="401" key="GridCell.Tab.0.bottom" timestamp="1594517861847">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1594521918921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
-    <state width="1258" height="401" key="GridCell.Tab.0.center" timestamp="1594517861847">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521918921" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1594521918921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
-    <state width="1258" height="401" key="GridCell.Tab.0.left" timestamp="1594517861847">
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521918921" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1594521918921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
-    <state width="1258" height="401" key="GridCell.Tab.0.right" timestamp="1594517861847">
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521918921" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1594521918921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594518034103">
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521918921" />
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1594521361170">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594518034103" />
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521361170" />
+    <state width="2517" height="492" key="GridCell.Tab.1.center" timestamp="1594521361170">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521361170" />
+    <state width="2517" height="492" key="GridCell.Tab.1.left" timestamp="1594521361170">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521361170" />
+    <state width="2517" height="492" key="GridCell.Tab.1.right" timestamp="1594521361170">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594521361170" />
+    <state x="860" y="434" key="IDE.errors.dialog" timestamp="1594518697181">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="860" y="434" key="IDE.errors.dialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594518697181" />
+    <state x="760" y="277" width="998" height="708" key="SettingsEditor" timestamp="1594518669230">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="760" y="277" width="998" height="708" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594518669230" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594518506353">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594518506353" />
     <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594517784813">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517784813" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
