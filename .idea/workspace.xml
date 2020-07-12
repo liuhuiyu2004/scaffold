@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="作废重写轮子，标注替代方法">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/liuhuiyu/scaffold/utils/DateTimeUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/liuhuiyu/scaffold/utils/DateTimeUtilTest.java" afterDir="false" />
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新本地日期时间工具">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/entity/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/domain/entity/package-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594517411702</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="更新本地日期时间工具">
+      <created>1594517942167</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594517942167</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -290,45 +298,46 @@
     <MESSAGE value="加入字节码工具类&#10;加入访问地址工具类" />
     <MESSAGE value="完善项目结构" />
     <MESSAGE value="作废重写轮子，标注替代方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="作废重写轮子，标注替代方法" />
+    <MESSAGE value="更新本地日期时间工具" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新本地日期时间工具" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1162" y="562" key="#Notifications/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594514858264" />
-    <state x="798" y="264" key="CommitChangelistDialog2" timestamp="1594517406614">
+    <state x="798" y="264" key="CommitChangelistDialog2" timestamp="1594517941177">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="798" y="264" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517406614" />
+    <state x="798" y="264" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517941177" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1594514789687">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594514789687" />
-    <state width="1258" height="401" key="GridCell.Tab.0.bottom" timestamp="1594517051922">
+    <state width="1258" height="401" key="GridCell.Tab.0.bottom" timestamp="1594517861847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517051922" />
-    <state width="1258" height="401" key="GridCell.Tab.0.center" timestamp="1594517051922">
+    <state width="1258" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
+    <state width="1258" height="401" key="GridCell.Tab.0.center" timestamp="1594517861847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517051922" />
-    <state width="1258" height="401" key="GridCell.Tab.0.left" timestamp="1594517051922">
+    <state width="1258" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
+    <state width="1258" height="401" key="GridCell.Tab.0.left" timestamp="1594517861847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517051922" />
-    <state width="1258" height="401" key="GridCell.Tab.0.right" timestamp="1594517051922">
+    <state width="1258" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
+    <state width="1258" height="401" key="GridCell.Tab.0.right" timestamp="1594517861847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517051922" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594517422194">
+    <state width="1258" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517861847" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594517944145">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517422194" />
-    <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594517710304">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517944145" />
+    <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594517784813">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517710304" />
+    <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517784813" />
   </component>
   <component name="masterDetails">
     <states>
