@@ -33,7 +33,7 @@ public class Result<T> {
         this.code = code;
     }
 
-    public String getMsg() {
+    public String getMsg()  {
         return msg;
     }
 
