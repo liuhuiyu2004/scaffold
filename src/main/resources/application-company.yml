@@ -38,7 +38,8 @@ spring:
   data:
     cassandra:
       ssl: false
-#mysystemproperties: #zid
+myConfiguration: #zid
+  socketPost: 2004  #socket端口配置
 #  commonResourceAddress: #http://qn.liuhuiyu.com  #通用框架起始地址
 #  layuiAddress: /layui #http://qn.liuhuiyu.com/layui_2_5_4 #layui框架地址
 #  webResourceAddress: #http://qn.liuhuiyu.com/distribution_cg #当前程序起始地址
