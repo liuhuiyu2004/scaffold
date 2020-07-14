@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="加入自定义配置">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" afterDir="false" />
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="添加图像工具类">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594640607221</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="添加图像工具类">
+      <created>1594724133256</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594724133256</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -341,7 +348,8 @@
     <MESSAGE value="更新 包注释 信息" />
     <MESSAGE value="加入banner设置" />
     <MESSAGE value="加入自定义配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入自定义配置" />
+    <MESSAGE value="添加图像工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加图像工具类" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
@@ -352,10 +360,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="384" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640443984" />
-    <state x="1353" y="405" key="CommitChangelistDialog2" timestamp="1594640605405">
+    <state x="1353" y="405" key="CommitChangelistDialog2" timestamp="1594724131821">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1353" y="405" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640605405" />
+    <state x="1353" y="405" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594724131821" />
     <state x="248" y="122" key="DiffContextDialog" timestamp="1594522488110">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
