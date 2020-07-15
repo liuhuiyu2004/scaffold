@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="添加图像工具类">
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/home/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +27,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -74,16 +74,16 @@
       <recent name="com.liuhuiyu.scaffold.utils" />
       <recent name="com.liuhuiyu.scaffold.utils.repeat_wheel" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Workspaces\Project\openSource\src\main\resources" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="junit.framework.TestCase" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates\home" />
       <recent name="E:\Workspaces\Project\openSource\src\main\resources\static" />
       <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.App">
@@ -364,10 +364,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1353" y="405" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594724131821" />
-    <state x="248" y="122" width="2048" height="1148" key="DiffContextDialog" timestamp="1594818556608">
+    <state x="248" y="122" key="DiffContextDialog" timestamp="1594522488110">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="248" y="122" width="2048" height="1148" key="DiffContextDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594818556608" />
+    <state x="248" y="122" key="DiffContextDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594522488110" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1594514789687">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -416,21 +416,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640609664" />
-    <state x="932" y="434" key="VcsDiffUtil.ChangesDialog" timestamp="1594818293410">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="932" y="434" key="VcsDiffUtil.ChangesDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594818293410" />
-    <state x="1073" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594818319019">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1073" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594818319019" />
     <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594517784813">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517784813" />
-    <state x="982" y="487" key="git4idea.merge.GitPullDialog" timestamp="1594818229745">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="982" y="487" key="git4idea.merge.GitPullDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594818229745" />
   </component>
 </project>
