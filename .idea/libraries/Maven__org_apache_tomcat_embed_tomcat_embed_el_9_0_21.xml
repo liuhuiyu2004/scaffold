@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.21">
     <CLASSES>
-      <root url="jar://D:/users/liuhu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.21/tomcat-embed-el-9.0.21.jar!/" />
+      <root url="jar://D:/Users/liuhu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.21/tomcat-embed-el-9.0.21.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://D:/Users/liuhu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.21/tomcat-embed-el-9.0.21-javadoc.jar!/" />

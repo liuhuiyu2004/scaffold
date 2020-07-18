@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="添加图像工具类">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/DeviceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/ReceiveMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/SocketServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/BytesUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
@@ -95,6 +99,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_11_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/SocketDrvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/socket/IDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ConvertUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ConvertUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +122,7 @@
         <option value="HTML File" />
         <option value="LHY_Controller" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -447,10 +456,15 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1162" y="562" key="#Notifications/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594514858264" />
-    <state x="1085" y="384" key="#com.intellij.ide.util.MemberChooser" timestamp="1594640443984">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="814" y="285" key="#com.intellij.ide.util.MemberChooser" timestamp="1595038658781">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1085" y="384" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640443984" />
+    <state x="814" y="285" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595038658781" />
+    <state x="494" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595032964843">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="494" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595032964843" />
     <state x="1353" y="405" key="CommitChangelistDialog2" timestamp="1594724131821">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -511,5 +525,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517784813" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595034700940">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595034700940" />
   </component>
 </project>

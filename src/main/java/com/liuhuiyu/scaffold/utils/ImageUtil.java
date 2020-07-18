@@ -111,7 +111,7 @@ public class ImageUtil {
      */
     public static int hexToInt(String hex) {
         hex = hex.replace("#", "");
-        if (hex == "") return 0;
+        if (hex.equals("")) return 0;
         return Integer.parseInt(hex, 16);
     }
 
@@ -125,7 +125,7 @@ public class ImageUtil {
      */
     public static @NotNull String convertRGBToHex(int r, int g, int b) {
         String s = "0123456789ABCDEF";
-        String hex = "";
+        String hex;
         if (r >= 0 && r < 256 && g >= 0 && g < 256 && b >= 0 && b < 256) {
             int x, y, z;
             x = r % 16;
@@ -140,5 +140,17 @@ public class ImageUtil {
             hex = "000000";
         }
         return hex;
+    }
+
+    /**
+     * argb转数字
+     * @param alpha 透明度(一般为128)
+     * @param red   红色
+     * @param green 绿色
+     * @param blue  蓝色
+     * @return  数字
+     */
+    public static int rgbToInt(int alpha,int red,int green,int blue){
+        return (alpha << 24) | (red<< 16) | (green << 8) | blue;
     }
 }
