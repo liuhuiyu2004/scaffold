@@ -1,7 +1,6 @@
 package com.liuhuiyu.scaffold.socket;
 
 import com.liuhuiyu.scaffold.utils.BytesUtil;
-import com.liuhuiyu.scaffold.utils.ConvertUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,7 +64,7 @@ public class ReceiveMessage {
         this.minorVer = BytesUtil.byteArrayToInt(minorVerBytes);
         byte[] bodyLenBytes = new byte[ReceiveMessage.HEAD_LEN_BODY_LEN];
         System.arraycopy(headBytes, index, bodyLenBytes, 0, bodyLenBytes.length);
-        this.bodyLen = BytesUtil.byteArrayToInt(minorVerBytes);
+        this.bodyLen = BytesUtil.byteArrayToInt(bodyLenBytes);
         this.bodyBytes = new byte[this.bodyLen];
         for (int i = 0; i < this.bodyBytes.length; i++) {
             this.bodyBytes[i] = dataInputStream.readByte();

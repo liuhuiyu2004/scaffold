@@ -1,5 +1,6 @@
 package com.liuhuiyu.scaffold.socket;
 
+import com.liuhuiyu.scaffold.utils.BytesUtil;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -40,10 +41,13 @@ public class DeviceManager implements Runnable {
 
     @Contract(pure = true)
     private @NotNull IDevice getDevice(Socket socket, DataInputStream dataInputStream, @NotNull ReceiveMessage receiveMessage) {
-        if (receiveMessage.mainVer == 1 && receiveMessage.minorVer == 1) {
+        if (receiveMessage.getMainVer() == 1 && receiveMessage.getMinorVer() == 1) {
             return () -> {
                 //这里插入解析分配
                 logger.debug(socket.toString() + ";" + dataInputStream.toString());
+                logger.debug("报文头长度：" + receiveMessage.getHeadLen() + ";主要版本号：" + receiveMessage.getMainVer() + ";次要版本号：" + receiveMessage.getMinorVer() + ";报文体长度：" + receiveMessage.getBodyLen());
+                logger.debug("报文头：" + BytesUtil.bytesToString(receiveMessage.getHeadBytes()));
+                logger.debug("报文体：" + BytesUtil.bytesToString(receiveMessage.getBodyBytes()));
             };
         }
         else {
