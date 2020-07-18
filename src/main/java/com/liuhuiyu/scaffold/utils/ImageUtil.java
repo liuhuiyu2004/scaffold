@@ -1,6 +1,7 @@
 package com.liuhuiyu.scaffold.utils;
 
 import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import javax.imageio.ImageIO;
@@ -59,8 +60,9 @@ public class ImageUtil {
 
     /**
      * 单字节 转换成 RGB 伪颜色
-     * @param val   单字节
-     * @return  RGB 伪颜色
+     *
+     * @param val 单字节
+     * @return RGB 伪颜色
      */
     public static int greyToRgb(int val) {
         int r, g, b;
@@ -144,13 +146,57 @@ public class ImageUtil {
 
     /**
      * argb转数字
+     *
      * @param alpha 透明度(一般为128)
      * @param red   红色
      * @param green 绿色
      * @param blue  蓝色
-     * @return  数字
+     * @return 数字
      */
-    public static int rgbToInt(int alpha,int red,int green,int blue){
-        return (alpha << 24) | (red<< 16) | (green << 8) | blue;
+    public static int rgbToInt(int alpha, int red, int green, int blue) {
+        return (alpha << 24) | (red << 16) | (green << 8) | blue;
     }
+
+    /**
+     * 动态灰度图(2*byte)转伪彩
+     *
+     * @param buffer 灰度（2*byte）
+     * @param width  宽度
+     * @param height 高度
+     * @return 伪彩矩阵
+     */
+    @Contract(pure = true)
+    private static int[] @NotNull [] hotBytesToMatrixBytesWithDynamic(byte @NotNull [] buffer, int width, int height) {
+        int[][] matrixBytes = new int[height][width];
+        //获取最低
+        int min = 128 * 128;//最小值
+        //获取最高
+        int max = 0;//最大值
+        for (int i = 0; i < buffer.length / 2; i += 2) {
+            byte[] tmpB = new byte[2];
+            tmpB[1] = buffer[i * 2];
+            tmpB[0] = buffer[i * 2 + 1];
+            int value = BytesUtil.byteArrayToInt(tmpB);
+            if (value != 0) {
+                min = Math.min(min, value);
+                max = Math.max(max, value);
+            }
+        }
+        float weight = (float) 255 / (max - min);
+        for (int y = 0; y < width; y++) {
+            for (int x = 0; x < height; x++) {
+                int index = (y * height + x) * 2;
+                byte[] tmpB = new byte[2];
+                tmpB[1] = buffer[index];
+                tmpB[0] = buffer[index + 1];
+                int i = BytesUtil.byteArrayToInt(tmpB);
+                //灰度计算
+                int gray = (i == 0 ? 255 : (int) ((i - min) * weight));
+                //灰度转rgb
+                matrixBytes[x][y] = greyToRgb(gray);
+            }
+        }
+        return matrixBytes;
+    }
+
 }
