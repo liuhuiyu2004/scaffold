@@ -3,6 +3,7 @@ package com.liuhuiyu.scaffold.utils;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.*;
 import java.util.Arrays;
 
 /**
@@ -22,9 +23,12 @@ public class BytesUtil {
         for (byte b : data) {
             String s = Integer.toHexString(b & 0xFF).toUpperCase();
             if (s.length() == 1) {
-                s = "0" + s;
+                info.append(" 0");
             }
-            info.append(" ").append(s);
+            else {
+                info.append(" ");
+            }
+            info.append(s);
         }
         return info.toString();
     }
@@ -48,5 +52,40 @@ public class BytesUtil {
                 (b1[2] & 0xFF) << 8 |
                 (b1[1] & 0xFF) << 16 |
                 (b1[0] & 0xFF) << 24;
+    }
+
+    /**
+     * 保存byte[]到文件
+     *
+     * @param data         byte[]
+     * @param fullFileName 文件名
+     * @throws IOException IO错误
+     */
+    public static void bytesToFile(byte[] data, String fullFileName) throws IOException {
+        FileOutputStream fos = new FileOutputStream(fullFileName);
+        fos.write(data, 0, data.length);
+        fos.flush();
+        fos.close();
+    }
+
+    /**
+     * 读取文件转换成 byte[]
+     *
+     * @param fullFileName 文件名
+     * @return byte[]
+     * @throws IOException IO错误
+     */
+    public static byte @NotNull [] fileToBytes(String fullFileName) throws IOException {
+        File file = new File(fullFileName);
+        long fileSize = file.length();
+        FileInputStream fileInputStream = new FileInputStream(fullFileName);
+        byte[] buffer = new byte[(int) fileSize];
+        int offset = 0;
+        int numRead = 0;
+        while (offset < buffer.length
+                && (numRead = fileInputStream.read(buffer, offset, buffer.length - offset)) >= 0) {
+            offset += numRead;
+        }
+        return buffer;
     }
 }
