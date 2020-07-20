@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import javax.imageio.ImageIO;
+import javax.persistence.criteria.ParameterExpression;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -199,4 +200,51 @@ public class ImageUtil {
         return matrixBytes;
     }
 
+    /**
+     * 动态灰度图(2*byte)转伪彩
+     *
+     * @param buffer 灰度（2*byte）
+     * @param width  宽度
+     * @param height 高度
+     * @return 伪彩矩阵
+     */
+    @Contract(pure = true)
+    private static int[] @NotNull [] hotBytesToMatrixBytesWithDynamic(byte @NotNull [] buffer, int width, int height, int byteNum) {
+        if (byteNum > 4 || byteNum <= 0) {
+            throw new IllegalArgumentException("byteNum 取值范围 1-4");
+        }
+        int[][] matrixBytes = new int[height][width];
+        //获取最低
+        int min = 128 * 128;//最小值
+        //获取最高
+        int max = 0;//最大值
+        for (int i = 0; i < buffer.length / byteNum; i += byteNum) {
+            byte[] tmpB = new byte[byteNum];
+            for (int j = 0; j < byteNum; j++) {
+                tmpB[j] = buffer[i * byteNum + byteNum - (j+1)];
+            }
+//            System.arraycopy(buffer, 0 * byteNum + 0, tmpB, 0, byteNum);
+            int value = BytesUtil.byteArrayToInt(tmpB);
+            if (value != 0) {
+                min = Math.min(min, value);
+                max = Math.max(max, value);
+            }
+        }
+        float weight = (float) 255 / (max - min);
+        for (int y = 0; y < width; y++) {
+            for (int x = 0; x < height; x++) {
+                int index = (y * height + x) * 2;
+                byte[] tmpB = new byte[2];
+                for (int j = 0; j < byteNum; j++) {
+                    tmpB[j] = buffer[index + byteNum - (j+1)];
+                }
+                int i = BytesUtil.byteArrayToInt(tmpB);
+                //灰度计算
+                int gray = (i == 0 ? 255 : (int) ((i - min) * weight));
+                //灰度转rgb
+                matrixBytes[x][y] = greyToRgb(gray);
+            }
+        }
+        return matrixBytes;
+    }
 }
