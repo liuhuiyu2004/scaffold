@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新图像处理">
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新图像处理 加入指定灰阶位数处理">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/common/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" afterDir="false" />
     </list>
@@ -20,10 +22,10 @@
         <option value="JUnit3 Test Class" />
         <option value="package-info" />
         <option value="FxmlFile" />
-        <option value="HTML File" />
         <option value="LHY_Controller" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -56,6 +58,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
@@ -75,16 +79,18 @@
       <recent name="com.liuhuiyu.scaffold.utils" />
       <recent name="com.liuhuiyu.scaffold.utils.repeat_wheel" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Workspaces\Project\openSource\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\templates\" />
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources" />
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates\home" />
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources\static" />
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates\home" />
-      <recent name="E:\Workspaces\Project\openSource\src\main\resources\static" />
-      <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.App">
@@ -360,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595064548230</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="更新图像处理 加入指定灰阶位数处理">
+      <created>1595205870393</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1595205870393</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -380,7 +393,8 @@
     <MESSAGE value="添加图像工具类" />
     <MESSAGE value="添加通用Socket协议头(仅包含头部中前8个字节定义)" />
     <MESSAGE value="更新图像处理" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新图像处理" />
+    <MESSAGE value="更新图像处理 加入指定灰阶位数处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新图像处理 加入指定灰阶位数处理" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
@@ -396,11 +410,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="494" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595032964843" />
-    <state x="535" y="0" key="CommitChangelistDialog2" timestamp="1595064546719">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2455" y="0" key="CommitChangelistDialog2" timestamp="1595205868565">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1353" y="405" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594724131821" />
     <state x="535" y="0" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595064546719" />
+    <state x="2455" y="0" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595205868565" />
     <state x="186" y="91" width="1536" height="860" key="DiffContextDialog" timestamp="1595049816178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -450,11 +465,12 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="760" y="277" width="998" height="708" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594518669230" />
-    <state x="654" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595064550032">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595205872323">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640609664" />
     <state x="654" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595064550032" />
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595205872323" />
     <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594517784813">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

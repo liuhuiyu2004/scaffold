@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head th:fragment="common_header(titleName,links,script)">
+  <title th:text="'热成像设备监管-'+${titleName}"></title>
+  <link rel="shortcut icon" type="image/png" th:href="@{/images/favicon.ico}">
+  <meta name="description" content="后台管理">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta content="no-siteapp" http-equiv="Cache-Control"/>
+  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/js/vue.min.js}"></script>
+  <th:block th:replace="${links}"/>
+  <th:block th:replace="${script}"/>
+</head>
+</html>
