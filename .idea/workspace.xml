@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="加入thymeleaf，模板">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/liuhuiyu/scaffold/controller/BaseControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/liuhuiyu/scaffold/service/BaseServiceTest.java" afterDir="false" />
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="加入测试基础类">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_10.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -379,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595291828680</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="加入测试基础类">
+      <created>1595295592664</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1595295592664</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -401,7 +408,8 @@
     <MESSAGE value="更新图像处理" />
     <MESSAGE value="更新图像处理 加入指定灰阶位数处理" />
     <MESSAGE value="加入thymeleaf，模板" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入thymeleaf，模板" />
+    <MESSAGE value="加入测试基础类" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入测试基础类" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
@@ -417,12 +425,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="494" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595032964843" />
-    <state x="2455" y="0" key="CommitChangelistDialog2" timestamp="1595291826479">
+    <state x="2455" y="0" key="CommitChangelistDialog2" timestamp="1595295591186">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1353" y="405" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594724131821" />
     <state x="535" y="0" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595064546719" />
-    <state x="2455" y="0" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595291826479" />
+    <state x="2455" y="0" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595295591186" />
     <state x="186" y="91" width="1536" height="860" key="DiffContextDialog" timestamp="1595049816178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -472,12 +480,12 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="760" y="277" width="998" height="708" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594518669230" />
-    <state x="2574" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595291830679">
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595295593986">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640609664" />
     <state x="654" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595064550032" />
-    <state x="2574" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595291830679" />
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595295593986" />
     <state x="2679" y="297" key="chooseDestDirectoryDialog" timestamp="1595295519942">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
