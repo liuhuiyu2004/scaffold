@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新依赖js">
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="更新配置文件">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/configuration/MyWebMvcConfigurer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/common/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vue/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/common/vue/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vue/vue.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/common/vue/vue.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,19 +80,19 @@
       <recent name="com.liuhuiyu.scaffold.utils" />
       <recent name="com.liuhuiyu.scaffold.utils.repeat_wheel" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\js" />
-      <recent name="E:\Workspaces\Project\openSource\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static" />
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\common" />
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\common\js" />
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\js\vue" />
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\js\jquery" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\js\vue" />
-      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\js\jquery" />
-      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\templates\" />
-      <recent name="E:\WorkSpace\github\scaffold\src\main\resources" />
-      <recent name="E:\Workspaces\Project\openSource\src\main\resources\templates\home" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\github\scaffold\src\main\resources\static\js" />
+      <recent name="E:\Workspaces\Project\openSource\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.App">
@@ -393,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595376366271</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="更新配置文件">
+      <created>1595408967731</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1595408967731</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -417,7 +427,8 @@
     <MESSAGE value="加入thymeleaf，模板" />
     <MESSAGE value="加入测试基础类" />
     <MESSAGE value="更新依赖js" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新依赖js" />
+    <MESSAGE value="更新配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新配置文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
@@ -433,12 +444,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="494" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595032964843" />
-    <state x="2476" y="44" key="CommitChangelistDialog2" timestamp="1595376364440">
+    <state x="2476" y="44" key="CommitChangelistDialog2" timestamp="1595408966683">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1353" y="405" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594724131821" />
     <state x="535" y="0" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595064546719" />
-    <state x="2476" y="44" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595376364440" />
+    <state x="2476" y="44" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595408966683" />
     <state x="186" y="91" width="1536" height="860" key="DiffContextDialog" timestamp="1595049816178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -492,12 +503,12 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2703" y="348" key="VCS.ChangelistChooser/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595376309137" />
-    <state x="2574" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595376367944">
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595408970062">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640609664" />
     <state x="654" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595064550032" />
-    <state x="2574" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595376367944" />
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595408970062" />
     <state x="2679" y="297" key="chooseDestDirectoryDialog" timestamp="1595295519942">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
