@@ -123,16 +123,19 @@
       <version>3.10</version>
     </dependency>
 
-    <!--    <dependency>-->
-<!--      <groupId>commons-lang</groupId>-->
-<!--      <artifactId>commons-lang</artifactId>-->
-<!--      <version>2.6</version>-->
-<!--    </dependency>-->
-    <!--    <dependency>-->
-<!--      <groupId>org.mockito</groupId>-->
-<!--      <artifactId>mockito-core</artifactId>-->
-<!--    </dependency>-->
-    <!--endregion-->
+    <!-- Base64编码需要  -->
+    <dependency>
+      <groupId>org.apache.directory.studio</groupId>
+      <artifactId>org.apache.commons.codec</artifactId>
+      <version>1.8</version>
+    </dependency>
+
+    <!--提供更多的加密、填充方式-->
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk16</artifactId>
+      <version>1.46</version>
+    </dependency>
   </dependencies>
 
   <build>

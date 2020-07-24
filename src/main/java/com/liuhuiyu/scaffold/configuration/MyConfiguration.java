@@ -1,5 +1,7 @@
 package com.liuhuiyu.scaffold.configuration;
 
+import com.liuhuiyu.scaffold.utils.SpringUtil;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -13,12 +15,18 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "myConfiguration")
 public class MyConfiguration {
-    private final static Logger logger = LoggerFactory.getLogger(MyConfiguration.class);
-
+    public static @NotNull MyConfiguration getInstance() {
+        return SpringUtil.getBean(MyConfiguration.class);
+    }
     /**
      * socket端口
      */
     private int socketPost;
+    /**
+     * 安全通讯
+     */
+    private boolean safety;
+
 
     public int getSocketPost() {
         return socketPost;
@@ -26,5 +34,13 @@ public class MyConfiguration {
 
     public void setSocketPost(int socketPost) {
         this.socketPost = socketPost;
+    }
+
+    public boolean isSafety() {
+        return safety;
+    }
+
+    public void setSafety(boolean safety) {
+        this.safety = safety;
     }
 }
