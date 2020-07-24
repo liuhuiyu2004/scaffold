@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="后端加入拦截解密">
-      <change beforePath="$PROJECT_DIR$/target/classes/application-company.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-company.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+    <list default="true" id="600e72c0-1415-4716-be19-5de198bda40e" name="Default" comment="后端加入拦截解密过滤器&#10;感谢huanzi提供的程序，对此代码进行完善实现的前端加密后代拦截处理">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuhuiyu/scaffold/utils/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -444,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595581187648</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="后端加入拦截解密过滤器&#10;感谢huanzi提供的程序，对此代码进行完善实现的前端加密后代拦截处理">
+      <created>1595581489515</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1595581489515</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -475,7 +482,8 @@
     <MESSAGE value="完善反馈信息" />
     <MESSAGE value="加入前端加密发送数据到后台" />
     <MESSAGE value="后端加入拦截解密" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端加入拦截解密" />
+    <MESSAGE value="后端加入拦截解密过滤器&#10;感谢huanzi提供的程序，对此代码进行完善实现的前端加密后代拦截处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端加入拦截解密过滤器&#10;感谢huanzi提供的程序，对此代码进行完善实现的前端加密后代拦截处理" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1162" y="562" key="#Notifications" timestamp="1594514858264">
@@ -491,12 +499,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="494" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595032964843" />
-    <state x="2971" y="168" key="CommitChangelistDialog2" timestamp="1595581185656">
+    <state x="2674" y="58" key="CommitChangelistDialog2" timestamp="1595581488444">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1353" y="405" key="CommitChangelistDialog2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594724131821" />
     <state x="535" y="0" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595553970248" />
-    <state x="2971" y="168" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595581185656" />
+    <state x="2674" y="58" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595581488444" />
     <state x="186" y="91" width="1536" height="860" key="DiffContextDialog" timestamp="1595049816178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -554,12 +562,12 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2703" y="348" key="VCS.ChangelistChooser/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595376309137" />
-    <state x="2574" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595581189168">
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2" timestamp="1595581494262">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594640609664" />
     <state x="654" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595553973310" />
-    <state x="2574" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595581189168" />
+    <state x="2574" y="322" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595581494262" />
     <state x="2679" y="297" key="chooseDestDirectoryDialog" timestamp="1595295519942">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -569,9 +577,10 @@
     </state>
     <state x="1013" y="527" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594517784813" />
     <state x="2680" y="391" key="com.intellij.testIntegration.createTest.CreateTestDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595552802606" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595034700940">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595581751401">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595034700940" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1595581751401" />
   </component>
 </project>

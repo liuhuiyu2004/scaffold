@@ -5,6 +5,9 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -245,5 +248,84 @@ public class ImageUtil {
             }
         }
         return matrixBytes;
+    }
+
+    /**
+     * 左右镜像
+     * @param bufImage  图片buf
+     */
+    @Contract("_ -> param1")
+    public static void mirror(@NotNull BufferedImage bufImage) {
+
+        // 获取图片的宽高
+        final int width = bufImage.getWidth();
+        final int height = bufImage.getHeight();
+
+        // 读取出图片的所有像素
+        int[] rgbs = bufImage.getRGB(0, 0, width, height, null, 0, width);
+
+        // 对图片的像素矩阵进行水平镜像
+        for (int row = 0; row < height; row++) {
+            for (int col = 0; col < width / 2; col++) {
+                int temp = rgbs[row * width + col];
+                rgbs[row * width + col] = rgbs[row * width + (width - 1 - col)];
+                rgbs[row * width + (width - 1 - col)] = temp;
+            }
+        }
+
+        // 把水平镜像后的像素矩阵设置回 bufImage
+        bufImage.setRGB(0, 0, width, height, rgbs, 0, width);
+    }
+
+    /**
+     * 图像旋转
+     * @param image 原始图像
+     * @param degree    旋转角度
+     * @return  旋转后的图像
+     * @throws IOException  io错误
+     */
+    public static BufferedImage rotateImage(BufferedImage image, int degree)
+            throws IOException {
+        BufferedImage rotatedImage = null;
+        try {
+            int originalImWidth = image.getWidth();
+            int originalImHeight = image.getHeight();
+            int rotateImWidth = 0;
+            int rotateImHeight = 0;
+            int x = 0;
+            int y = 0;
+            degree = degree % 360;
+            if (degree < 0) {
+                degree = 360 + degree;
+            }
+            double radian = Math.toRadians(degree);
+            if (degree == 180 || degree == 0 || degree == 360) {
+                rotateImWidth = originalImWidth;
+                rotateImHeight = originalImHeight;
+            } else if (degree == 90 || degree == 270) {
+                rotateImWidth = originalImHeight;
+                rotateImHeight = originalImWidth;
+            } else {
+                double cosVal = Math.abs(Math.cos(radian));
+                double sinVal = Math.abs(Math.sin(radian));
+                rotateImWidth = (int)(sinVal * originalImHeight) + (int)(cosVal * originalImWidth);
+                rotateImHeight = (int)(sinVal * originalImWidth) + (int)(cosVal * originalImHeight);
+            }
+            x = (rotateImWidth / 2) - (originalImWidth / 2);
+            y = (rotateImHeight / 2) - (originalImHeight / 2);
+            rotatedImage = new BufferedImage(rotateImWidth, rotateImHeight, image.getType());
+            Graphics2D gs = (Graphics2D) rotatedImage.getGraphics();
+            gs.fillRect(0, 0, rotateImWidth, rotateImHeight);
+            AffineTransform at = new AffineTransform();
+            at.rotate(radian, rotateImWidth / 2, rotateImHeight / 2);
+            at.translate(x, y);
+            AffineTransformOp op = new AffineTransformOp(at,
+                    AffineTransformOp.TYPE_BICUBIC);
+            op.filter(image, rotatedImage);
+        } catch (Exception e) {
+//            F2Logger.getLogger().log(PhotoConstants.EFUP0002, new Object[] { e.getMessage() });
+            throw e;
+        }
+        return rotatedImage;
     }
 }
