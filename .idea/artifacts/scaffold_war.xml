@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="scaffold:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="scaffold-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="scaffold:war exploded" />
-    </root>
-  </artifact>
-</component>
