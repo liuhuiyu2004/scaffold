@@ -255,11 +255,19 @@ public class ImageUtil {
      * @param bufImage  图片buf
      */
     @Contract("_ -> param1")
-    public static void mirror(@NotNull BufferedImage bufImage) {
-
+    public static BufferedImage mirror(@NotNull BufferedImage bufImage) {
         // 获取图片的宽高
         final int width = bufImage.getWidth();
         final int height = bufImage.getHeight();
+        BufferedImage rotatedImage = new BufferedImage(rotateImWidth, rotateImHeight, image.getType());
+        for (int row = 0; row < height; row++) {
+            for (int col = 0; col < width / 2; col++) {
+                int temp = rgbs[row * width + col];
+                rotatedImage.set()
+                rotatedImage[row * width + col] = rgbs[row * width + (width - 1 - col)];
+                rotatedImage[row * width + (width - 1 - col)] = temp;
+            }
+        }
 
         // 读取出图片的所有像素
         int[] rgbs = bufImage.getRGB(0, 0, width, height, null, 0, width);
