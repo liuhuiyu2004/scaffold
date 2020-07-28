@@ -302,7 +302,6 @@ public class ImageUtil {
         return rotatedImage;
     }
 
-
     /**
      * 缩放图片方法
      * @param height 目标高度像素
