@@ -7,6 +7,7 @@ import com.liuhuiyu.scaffold.utils.security.AesUtil;
 import lombok.extern.log4j.Log4j2;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.core.annotation.Order;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -20,8 +21,10 @@ import java.util.Map;
  * @version v1.0.0.0
  * Created DateTime 2020-07-24 16:46
  */
-@WebFilter
+//@WebFilter
 @Log4j2
+@Order(1)
+@WebFilter(urlPatterns = "/*",filterName = "AuthHeaderFilter")
 public class AuthHeaderSettingFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
