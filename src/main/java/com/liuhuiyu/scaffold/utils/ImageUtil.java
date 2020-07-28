@@ -251,41 +251,6 @@ public class ImageUtil {
     }
 
     /**
-     * 左右镜像
-     * @param bufImage  图片buf
-     */
-    @Contract("_ -> param1")
-    public static BufferedImage mirror(@NotNull BufferedImage bufImage) {
-        // 获取图片的宽高
-        final int width = bufImage.getWidth();
-        final int height = bufImage.getHeight();
-        BufferedImage rotatedImage = new BufferedImage(rotateImWidth, rotateImHeight, image.getType());
-        for (int row = 0; row < height; row++) {
-            for (int col = 0; col < width / 2; col++) {
-                int temp = rgbs[row * width + col];
-                rotatedImage.set()
-                rotatedImage[row * width + col] = rgbs[row * width + (width - 1 - col)];
-                rotatedImage[row * width + (width - 1 - col)] = temp;
-            }
-        }
-
-        // 读取出图片的所有像素
-        int[] rgbs = bufImage.getRGB(0, 0, width, height, null, 0, width);
-
-        // 对图片的像素矩阵进行水平镜像
-        for (int row = 0; row < height; row++) {
-            for (int col = 0; col < width / 2; col++) {
-                int temp = rgbs[row * width + col];
-                rgbs[row * width + col] = rgbs[row * width + (width - 1 - col)];
-                rgbs[row * width + (width - 1 - col)] = temp;
-            }
-        }
-
-        // 把水平镜像后的像素矩阵设置回 bufImage
-        bufImage.setRGB(0, 0, width, height, rgbs, 0, width);
-    }
-
-    /**
      * 图像旋转
      * @param image 原始图像
      * @param degree    旋转角度
@@ -335,5 +300,97 @@ public class ImageUtil {
             throw e;
         }
         return rotatedImage;
+    }
+
+
+    /**
+     * 缩放图片方法
+     * @param height 目标高度像素
+     * @param width  目标宽度像素
+     * @param bb     是否补白
+     */
+    public static @NotNull BufferedImage scale(@NotNull BufferedImage bi, int height, int width, boolean bb) {
+        double ratio; // 缩放比例
+        Image itemp = bi.getScaledInstance(width, height, Image.SCALE_SMOOTH);//bi.SCALE_SMOOTH  选择图像平滑度比缩放速度具有更高优先级的图像缩放算法。
+        // 计算比例
+        if ((bi.getHeight() > height) || (bi.getWidth() > width)) {
+            double   ratioHeight = (new Integer(height)).doubleValue()/ bi.getHeight();
+            double   ratioWhidth = (new Integer(width)).doubleValue()/ bi.getWidth();
+            if(ratioHeight>ratioWhidth){
+                ratio= ratioHeight;
+            }else{
+                ratio= ratioWhidth;
+            }
+            AffineTransformOp op = new AffineTransformOp(AffineTransform//仿射转换
+                    .getScaleInstance(ratio, ratio), null);//返回表示剪切变换的变换
+            itemp = op.filter(bi, null);//转换源 BufferedImage 并将结果存储在目标 BufferedImage 中。
+        }
+        if (bb) {//补白
+            BufferedImage image = new BufferedImage(width, height,
+                    BufferedImage.TYPE_INT_RGB);//构造一个类型为预定义图像类型之一的 BufferedImage。
+            Graphics2D g = image.createGraphics();//创建一个 Graphics2D，可以将它绘制到此 BufferedImage 中。
+            g.setColor(Color.white);//控制颜色
+            g.fillRect(0, 0, width, height);// 使用 Graphics2D 上下文的设置，填充 Shape 的内部区域。
+            if (width == itemp.getWidth(null))
+                g.drawImage(itemp, 0, (height - itemp.getHeight(null)) / 2,
+                        itemp.getWidth(null), itemp.getHeight(null),
+                        Color.white, null);
+            else
+                g.drawImage(itemp, (width - itemp.getWidth(null)) / 2, 0,
+                        itemp.getWidth(null), itemp.getHeight(null),
+                        Color.white, null);
+            g.dispose();
+            return image;
+        }else{
+            BufferedImage image = new BufferedImage(width, height,
+                    BufferedImage.TYPE_INT_RGB);//构造一个类型为预定义图像类型之一的 BufferedImage。
+            Graphics2D g = image.createGraphics();//创建一个 Graphics2D，可以将它绘制到此 BufferedImage 中。
+            g.setColor(Color.white);//控制颜色
+            g.fillRect(0, 0, width, height);// 使用 Graphics2D 上下文的设置，填充 Shape 的内部区域。
+            if (width == itemp.getWidth(null))
+                g.drawImage(itemp, 0, (height - itemp.getHeight(null)) / 2,
+                        itemp.getWidth(null), itemp.getHeight(null),
+                        Color.white, null);
+            else
+                g.drawImage(itemp, (width - itemp.getWidth(null)) / 2, 0,
+                        itemp.getWidth(null), itemp.getHeight(null),
+                        Color.white, null);
+            g.dispose();
+            return image;
+        }
+    }
+
+    /**
+     * 裁剪图片方法
+     * @param bufferedImage 图像源
+     * @param startX 裁剪开始x坐标
+     * @param startY 裁剪开始y坐标
+     * @param endX 裁剪结束x坐标
+     * @param endY 裁剪结束y坐标
+     * @return  BufferedImage
+     */
+    public static @NotNull BufferedImage cropImage(@NotNull BufferedImage bufferedImage, int startX, int startY, int endX, int endY) {
+        int width = bufferedImage.getWidth();
+        int height = bufferedImage.getHeight();
+        if (startX == -1) {
+            startX = 0;
+        }
+        if (startY == -1) {
+            startY = 0;
+        }
+        if (endX == -1) {
+            endX = width - 1;
+        }
+        if (endY == -1) {
+            endY = height - 1;
+        }
+        BufferedImage result = new BufferedImage(endX - startX, endY - startY, 4);
+        for (int x = startX; x < endX; ++x) {
+            for (int y = startY; y < endY; ++y) {
+                int rgb = bufferedImage.getRGB(x, y);
+                result.setRGB(x - startX, y - startY, rgb);
+            }
+        }
+        return result;
     }
 }
