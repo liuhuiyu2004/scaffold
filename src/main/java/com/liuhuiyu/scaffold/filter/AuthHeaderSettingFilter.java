@@ -26,6 +26,7 @@ public class AuthHeaderSettingFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
+
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, @NotNull FilterChain filterChain) throws IOException, ServletException {
         if (MyConfiguration.getInstance().isSafety()) {

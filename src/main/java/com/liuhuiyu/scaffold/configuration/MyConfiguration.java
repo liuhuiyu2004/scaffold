@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * Created DateTime 2020-07-13 19:38
  */
 @Component
-@ConfigurationProperties(prefix = "myConfiguration")
+@ConfigurationProperties(prefix = "myconfiguration")
 public class MyConfiguration {
     public static @NotNull MyConfiguration getInstance() {
         return SpringUtil.getBean(MyConfiguration.class);
