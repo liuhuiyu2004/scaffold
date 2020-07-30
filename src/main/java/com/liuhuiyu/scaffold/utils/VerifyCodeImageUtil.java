@@ -1,5 +1,7 @@
 package com.liuhuiyu.scaffold.utils;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
@@ -77,7 +79,7 @@ public class VerifyCodeImageUtil {
     /**
      * 生成随机颜色
      */
-    public static Color generateRandomColor() {
+    public static @NotNull Color generateRandomColor() {
         Random random = new Random();
         return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
     }
@@ -97,7 +99,7 @@ public class VerifyCodeImageUtil {
      * @param lineColor      干扰线颜色,若为null则表示采用随机颜色
      * @return 图片缓存对象
      */
-    public static BufferedImage generateImageCode(int type, int length, String excludeString, int width, int height, int interLine, boolean randomLocation, Color backColor, Color foreColor, Color lineColor) {
+    public static @NotNull BufferedImage generateImageCode(int type, int length, String excludeString, int width, int height, int interLine, boolean randomLocation, Color backColor, Color foreColor, Color lineColor) {
         String textCode = generateTextCode(type, length, excludeString);
         return generateImageCode(textCode, width, height, interLine, randomLocation, backColor, foreColor, lineColor);
     }
@@ -110,7 +112,7 @@ public class VerifyCodeImageUtil {
      * @param excludeString 需排除的特殊字符（无需排除则为null）
      * @return 验证码字符串
      */
-    public static String generateTextCode(int type, int length, String excludeString) {
+    public static @NotNull String generateTextCode(int type, int length, String excludeString) {
         if (length <= 0) {
             return "";
         }
@@ -201,7 +203,7 @@ public class VerifyCodeImageUtil {
      * @param lineColor      干扰线颜色,若为null则表示采用随机颜色
      * @return 图片缓存对象
      */
-    public static BufferedImage generateImageCode(String textCode, int width, int height, int interLine, boolean randomLocation, Color backColor, Color foreColor, Color lineColor) {
+    public static @NotNull BufferedImage generateImageCode(String textCode, int width, int height, int interLine, boolean randomLocation, Color backColor, Color foreColor, Color lineColor) {
         //创建内存图像
         BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         //获取图形上下文
