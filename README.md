@@ -1,8 +1,9 @@
 # scaffold
-Backstage management module
-
-# scaffold
-后台管理系统  
+Backstage management module  
+物联网后台管理系统  
+##实现功能
+与设备进行通讯  
+前端向后端发送加密数据
 ##目录结构  
 ###java  
 |命名空间| | | |类|说明|  
@@ -37,18 +38,3 @@ Backstage management module
 | |file| | |静态文件|
 | |system| | |本系统专用|
 |templates| | | |模板|
-*static*  
-**static**  
-***static***  
-_static_  
-__static__  
-___static___  
-~~~
-mkddkdjklfjdsa
-~~~
-`fff`
-
-a | b | c  
---- |---|---
-a1|b11|c2|
->
