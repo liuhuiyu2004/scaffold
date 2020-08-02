@@ -9,9 +9,7 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * 图像工具类
@@ -73,32 +71,26 @@ public class ImageUtil {
         //red
         if (val < 128) {
             r = 0;
-        }
-        else if (val < 192) {
+        } else if (val < 192) {
             r = 255 / 64 * (val - 128);
-        }
-        else {
+        } else {
             r = 255;
         }
         //green
         if (val < 64) {
             g = 255 / 64 * val;
-        }
-        else if (val < 192) {
+        } else if (val < 192) {
             g = 255;
-        }
-        else {
+        } else {
             g = -255 / 63 * (val - 192) + 255;
         }
 
         //blue
         if (val < 64) {
             b = 255;
-        }
-        else if (val < 128) {
+        } else if (val < 128) {
             b = -255 / 63 * (val - 192) + 255;
-        }
-        else {
+        } else {
             b = 0;
         }
 //        Vec3b rgb;
@@ -140,8 +132,7 @@ public class ImageUtil {
             z = b % 16;
             b = (b - z) / 16;
             hex = s.substring(r, r + 1) + s.substring(x, x + 1) + s.substring(g, g + 1) + s.substring(y, y + 1) + s.substring(b, b + 1) + s.substring(z, z + 1);
-        }
-        else {
+        } else {
             hex = "000000";
         }
         return hex;
@@ -223,7 +214,7 @@ public class ImageUtil {
         for (int i = 0; i < buffer.length / byteNum; i += byteNum) {
             byte[] tmpB = new byte[byteNum];
             for (int j = 0; j < byteNum; j++) {
-                tmpB[j] = buffer[i * byteNum + byteNum - (j+1)];
+                tmpB[j] = buffer[i * byteNum + byteNum - (j + 1)];
             }
 //            System.arraycopy(buffer, 0 * byteNum + 0, tmpB, 0, byteNum);
             int value = BytesUtil.byteArrayToInt(tmpB);
@@ -238,7 +229,7 @@ public class ImageUtil {
                 int index = (y * height + x) * 2;
                 byte[] tmpB = new byte[2];
                 for (int j = 0; j < byteNum; j++) {
-                    tmpB[j] = buffer[index + byteNum - (j+1)];
+                    tmpB[j] = buffer[index + byteNum - (j + 1)];
                 }
                 int i = BytesUtil.byteArrayToInt(tmpB);
                 //灰度计算
@@ -252,10 +243,11 @@ public class ImageUtil {
 
     /**
      * 图像旋转
-     * @param image 原始图像
-     * @param degree    旋转角度
-     * @return  旋转后的图像
-     * @throws IOException  io错误
+     *
+     * @param image  原始图像
+     * @param degree 旋转角度
+     * @return 旋转后的图像
+     * @throws IOException io错误
      */
     public static BufferedImage rotateImage(BufferedImage image, int degree)
             throws IOException {
@@ -281,8 +273,8 @@ public class ImageUtil {
             } else {
                 double cosVal = Math.abs(Math.cos(radian));
                 double sinVal = Math.abs(Math.sin(radian));
-                rotateImWidth = (int)(sinVal * originalImHeight) + (int)(cosVal * originalImWidth);
-                rotateImHeight = (int)(sinVal * originalImWidth) + (int)(cosVal * originalImHeight);
+                rotateImWidth = (int) (sinVal * originalImHeight) + (int) (cosVal * originalImWidth);
+                rotateImHeight = (int) (sinVal * originalImWidth) + (int) (cosVal * originalImHeight);
             }
             x = (rotateImWidth / 2) - (originalImWidth / 2);
             y = (rotateImHeight / 2) - (originalImHeight / 2);
@@ -304,6 +296,7 @@ public class ImageUtil {
 
     /**
      * 缩放图片方法
+     *
      * @param height 目标高度像素
      * @param width  目标宽度像素
      * @param bb     是否补白
@@ -313,12 +306,12 @@ public class ImageUtil {
         Image itemp = bi.getScaledInstance(width, height, Image.SCALE_SMOOTH);//bi.SCALE_SMOOTH  选择图像平滑度比缩放速度具有更高优先级的图像缩放算法。
         // 计算比例
         if ((bi.getHeight() > height) || (bi.getWidth() > width)) {
-            double   ratioHeight = (new Integer(height)).doubleValue()/ bi.getHeight();
-            double   ratioWhidth = (new Integer(width)).doubleValue()/ bi.getWidth();
-            if(ratioHeight>ratioWhidth){
-                ratio= ratioHeight;
-            }else{
-                ratio= ratioWhidth;
+            double ratioHeight = (new Integer(height)).doubleValue() / bi.getHeight();
+            double ratioWhidth = (new Integer(width)).doubleValue() / bi.getWidth();
+            if (ratioHeight > ratioWhidth) {
+                ratio = ratioHeight;
+            } else {
+                ratio = ratioWhidth;
             }
             AffineTransformOp op = new AffineTransformOp(AffineTransform//仿射转换
                     .getScaleInstance(ratio, ratio), null);//返回表示剪切变换的变换
@@ -340,7 +333,7 @@ public class ImageUtil {
                         Color.white, null);
             g.dispose();
             return image;
-        }else{
+        } else {
             BufferedImage image = new BufferedImage(width, height,
                     BufferedImage.TYPE_INT_RGB);//构造一个类型为预定义图像类型之一的 BufferedImage。
             Graphics2D g = image.createGraphics();//创建一个 Graphics2D，可以将它绘制到此 BufferedImage 中。
@@ -361,12 +354,13 @@ public class ImageUtil {
 
     /**
      * 裁剪图片方法
+     *
      * @param bufferedImage 图像源
-     * @param startX 裁剪开始x坐标
-     * @param startY 裁剪开始y坐标
-     * @param endX 裁剪结束x坐标
-     * @param endY 裁剪结束y坐标
-     * @return  BufferedImage
+     * @param startX        裁剪开始x坐标
+     * @param startY        裁剪开始y坐标
+     * @param endX          裁剪结束x坐标
+     * @param endY          裁剪结束y坐标
+     * @return BufferedImage
      */
     public static @NotNull BufferedImage cropImage(@NotNull BufferedImage bufferedImage, int startX, int startY, int endX, int endY) {
         int width = bufferedImage.getWidth();
@@ -391,5 +385,16 @@ public class ImageUtil {
             }
         }
         return result;
+    }
+
+    public static byte[] BufferedToByte(BufferedImage bufferedImage) throws IOException {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, "jpg", out);
+        return out.toByteArray();
+    }
+
+    public static BufferedImage BytesToBuffered(byte[] bytes) throws IOException {
+        ByteArrayInputStream in = new ByteArrayInputStream(bytes);    //将b作为输入流；
+        return ImageIO.read(in);     //将in作为输入流，读取图片存入image中，而这里in可以为ByteArrayInputStream();
     }
 }
