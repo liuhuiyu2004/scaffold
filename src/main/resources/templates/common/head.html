@@ -3,27 +3,27 @@
 <head th:fragment="common_header(titleName,links,script)">
   <title th:text="'热成像设备监管-'+${titleName}"></title>
   <link rel="shortcut icon" type="image/png" th:href="@{/images/favicon.ico}">
-  <meta name="description" content="后台管理">
+  <meta name="description" content="热成像设备监管">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="keywords" content="index">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="renderer" content="webkit">
-  <meta content="no-siteapp" http-equiv="Cache-Control"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <script th:src="@{/js/jquery.min.js}"></script>
   <script th:src="@{/js/vue.min.js}"></script>
-  <!--region  前端加密处理-->
+  <script th:src="@{/js/jquery.min.js}"></script>
   <script th:inline="javascript">
     //获取api加密开关并存到sessionStorage
     sessionStorage.setItem('sysApiEncrypt', [[${@mySystemProperties.isSafety()}]]);
 
     //获取后端RSA公钥并存到sessionStorage
     sessionStorage.setItem('javaPublicKey', [[${T(com.liuhuiyu.gxhotdevice.properties.SafetyProperties).getInstance().getPublicKey()}]]);
+
   </script>
-  <script type="text/javascript" th:src="@{/common/js/security/cryptojs.js}"></script>
-  <script type="text/javascript" th:src="@{/common/js/security/jsencrypt.js}"></script>
-  <script type="text/javascript" th:src="@{/common/js/common.js}"></script>
-  <!--endregion  -->
+  <script type="text/javascript" th:src="@{/js/security/cryptojs.js}"></script>
+  <script type="text/javascript" th:src="@{/js/security/jsencrypt.js}"></script>
+  <script type="text/javascript" th:src="@{/js/common.js}"></script>
   <th:block th:replace="${links}"/>
   <th:block th:replace="${script}"/>
 </head>
