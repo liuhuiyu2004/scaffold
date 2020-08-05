@@ -63,7 +63,7 @@ public class BytesUtil {
      * @throws IOException IO错误
      */
     public static void bytesToFile(byte[] data, String fullFileName) throws IOException {
-        FileUtils.writeByteArrayToFile(new File(fullFileName),data);
+        FileUtils.writeByteArrayToFile(new File(fullFileName), data);
 //        FileOutputStream fos = new FileOutputStream(fullFileName);
 //        fos.write(data, 0, data.length);
 //        fos.flush();
@@ -90,5 +90,99 @@ public class BytesUtil {
 //            offset += numRead;
 //        }
 //        return buffer;
+    }
+
+    /**
+     * 过滤数据
+     */
+    final static int FILTRATION_CODE = 0xFF;
+
+    /**
+     * 截取字节码 转换成 int
+     *
+     * @param bytes 字节码
+     * @param begin 起始索引
+     * @param len   长度
+     * @param asc   0->N(true);N-0(false)
+     * @return int
+     */
+    public static int bytesToInt(@NotNull byte[] bytes, int begin, int len, boolean asc) throws IllegalArgumentException {
+        int res = 0;
+        int endPointer = begin + len - 1;
+        if (begin < 0 || endPointer > bytes.length) {
+            throw new IllegalArgumentException("索引参数超出 bytes 有效范围。");
+        }
+        if (asc) {
+            for (int i = endPointer; i >= begin; i--) {
+                res <<= 8;
+                res |= (bytes[i] & FILTRATION_CODE);
+            }
+        }
+        else {
+            for (int i = begin; i <= endPointer; i++) {
+                res <<= 8;
+                res |= (bytes[i] & FILTRATION_CODE);
+            }
+        }
+        return res;
+    }
+
+    /**
+     * int 转 byte[]
+     *
+     * @param value int
+     * @param len   byte[] 长度
+     * @param asc   顺序
+     * @return int
+     * @throws IllegalArgumentException 参数取值错误
+     */
+    public static @NotNull byte[] intToBytes(int value, int len, boolean asc) throws IllegalArgumentException {
+        if (len > 4 || len < 1) {
+            throw new IllegalArgumentException("len 取值范围(1-4)");
+        }
+        byte[] buf = new byte[len];
+        if (asc) {
+            for (int i = 0; i < buf.length; i++) {
+                buf[i] = (byte) (value & FILTRATION_CODE);
+                value >>= 8;
+            }
+        }
+        else {
+            for (int i = buf.length - 1; i >= 0; i--) {
+                buf[i] = (byte) (value & FILTRATION_CODE);
+                value >>= 8;
+            }
+        }
+        return buf;
+    }
+
+    /**
+     * 使用int 填充 byte[]
+     * @param value int
+     * @param buf   要填充的 byte[]
+     * @param begin 开始位置
+     * @param len   长度
+     * @param asc   顺序
+     */
+    public static void intFullBytes(int value, @NotNull byte[] buf, int begin, int len, boolean asc) throws IllegalArgumentException {
+        if (len > 4 || len < 1) {
+            throw new IllegalArgumentException("len 取值范围(1-4)");
+        }
+        int endPointer = begin + len - 1;
+        if(endPointer>buf.length){
+            throw new IllegalArgumentException("begin + len 超出 buf最大长度");
+        }
+        if (asc) {
+            for (int i = begin; i <= endPointer; i++) {
+                buf[i] = (byte) (value & FILTRATION_CODE);
+                value >>= 8;
+            }
+        }
+        else {
+            for (int i = endPointer; i >= begin; i--) {
+                buf[i] = (byte) (value & FILTRATION_CODE);
+                value >>= 8;
+            }
+        }
     }
 }
