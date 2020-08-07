@@ -42,17 +42,7 @@ public class BytesUtil {
      */
     @Contract(pure = true)
     public static int byteArrayToInt(byte @NotNull [] bytes) {
-        if (bytes.length > 4) {
-            bytes = Arrays.copyOf(bytes, 4);
-        }
-        byte[] b1 = new byte[4];
-        for (int i = bytes.length; i > 0; i--) {
-            b1[b1.length - i] = bytes[bytes.length - i];
-        }
-        return b1[3] & 0xFF |
-                (b1[2] & 0xFF) << 8 |
-                (b1[1] & 0xFF) << 16 |
-                (b1[0] & 0xFF) << 24;
+        return bytesToInt(bytes,0,4,true);
     }
 
     /**
