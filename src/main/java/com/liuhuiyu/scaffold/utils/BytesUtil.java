@@ -1,5 +1,6 @@
 package com.liuhuiyu.scaffold.utils;
 
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -8,10 +9,13 @@ import java.io.*;
 import java.util.Arrays;
 
 /**
+ * byte数组工具类
+ *
  * @author LiuHuiYu
  * @version v1.0.0.0
  * Created DateTime 2020-07-18 9:08
  */
+@Log4j2
 public class BytesUtil {
     /**
      * 字节码 16进制输出
@@ -42,7 +46,7 @@ public class BytesUtil {
      */
     @Contract(pure = true)
     public static int byteArrayToInt(byte @NotNull [] bytes) {
-        return bytesToInt(bytes,0,4,true);
+        return bytesToInt(bytes, 0, 4, true);
     }
 
     /**
@@ -148,6 +152,7 @@ public class BytesUtil {
 
     /**
      * 使用int 填充 byte[]
+     *
      * @param value int
      * @param buf   要填充的 byte[]
      * @param begin 开始位置
@@ -159,7 +164,7 @@ public class BytesUtil {
             throw new IllegalArgumentException("len 取值范围(1-4)");
         }
         int endPointer = begin + len - 1;
-        if(endPointer>buf.length){
+        if (endPointer > buf.length) {
             throw new IllegalArgumentException("begin + len 超出 buf最大长度");
         }
         if (asc) {
@@ -176,12 +181,13 @@ public class BytesUtil {
         }
     }
 
-    public static long bytesToLong(@NotNull byte[] bytes,int begin,int len,boolean asc)throws IllegalArgumentException{
+    public static long bytesToLong(@NotNull byte[] bytes, int begin, int len, boolean asc) throws IllegalArgumentException {
         int res = 0;
         int endPointer = begin + len - 1;
         if (begin < 0 || endPointer > bytes.length) {
             throw new IllegalArgumentException("索引参数超出 bytes 有效范围。");
-        }else if(len>8|len<1){
+        }
+        else if (len > 8 | len < 1) {
             throw new IllegalArgumentException("len超出可用有效范围(1-8)。");
         }
         if (asc) {
@@ -230,18 +236,19 @@ public class BytesUtil {
 
     /**
      * 使用 long 填充 byte[]
+     *
      * @param value long
      * @param buf   要填充的 byte[]
      * @param begin 开始位置
      * @param len   长度
      * @param asc   顺序
      */
-    public static void longFullBytes(long value,@NotNull byte[] buf,int begin,int len,boolean asc)throws IllegalArgumentException {
+    public static void longFullBytes(long value, @NotNull byte[] buf, int begin, int len, boolean asc) throws IllegalArgumentException {
         if (len > 8 || len < 1) {
             throw new IllegalArgumentException("len 取值范围(1-8)");
         }
         int endPointer = begin + len - 1;
-        if(endPointer>buf.length){
+        if (endPointer > buf.length) {
             throw new IllegalArgumentException("begin + len 超出 buf最大长度");
         }
         if (asc) {
@@ -256,5 +263,93 @@ public class BytesUtil {
                 value >>= 8;
             }
         }
+    }
+
+
+    /**
+     * 二进制转十六进制
+     */
+    public static @NotNull String bytesToHex(byte @NotNull [] bytes) {
+        StringBuilder hexStr = new StringBuilder();
+        int num;
+        for (byte aByte : bytes) {
+            num = aByte;
+            if (num < 0) {
+                num += 256;
+            }
+            if (num < 16) {
+                hexStr.append("0");
+            }
+            hexStr.append(Integer.toHexString(num));
+        }
+        return hexStr.toString().toUpperCase();
+    }
+
+    /**
+     * Object对象转byte[]
+     */
+    public static byte[] objectToByte(Object obj) {
+        byte[] bytes = null;
+        ByteArrayOutputStream bo = null;
+        ObjectOutputStream oo = null;
+        try {
+            bo = new ByteArrayOutputStream();
+            oo = new ObjectOutputStream(bo);
+            //开始写入输出流
+            oo.writeObject(obj);
+            //输出流转byte
+            bytes = bo.toByteArray();
+        }
+        catch (Exception e) {
+            //输出到日志文件中
+            log.error(ErrorUtil.errorInfoToString(e));
+        }
+        finally {
+            //关闭流
+            try {
+                assert bo != null;
+                bo.close();
+                assert oo != null;
+                oo.close();
+            }
+            catch (IOException e) {
+                //输出到日志文件中
+                log.error(ErrorUtil.errorInfoToString(e));
+            }
+        }
+        return bytes;
+    }
+
+    /**
+     * byte[]转Object对象
+     */
+    public static Object byteToObject(byte[] bytes) {
+        Object obj = null;
+        ByteArrayInputStream bi = null;
+        ObjectInputStream oi = null;
+        try {
+            bi = new ByteArrayInputStream(bytes);
+            oi = new ObjectInputStream(bi);
+            //读取输入流
+            obj = oi.readObject();
+        }
+        catch (Exception e) {
+            //输出到日志文件中
+            log.error(ErrorUtil.errorInfoToString(e));
+        }
+        finally {
+            //关流
+            try {
+                assert bi != null;
+                bi.close();
+                assert oi != null;
+                oi.close();
+            }
+            catch (IOException e) {
+                //输出到日志文件中
+                log.error(ErrorUtil.errorInfoToString(e));
+            }
+        }
+        return obj;
     }
 }
