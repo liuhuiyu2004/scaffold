@@ -4,6 +4,7 @@ Backstage management module
 ##实现功能
 与设备进行通讯  
 前端向后端发送加密数据
+使用mysql 作为 session存储器
 ##目录结构  
 ###java  
 |命名空间| | | |类|说明|  
