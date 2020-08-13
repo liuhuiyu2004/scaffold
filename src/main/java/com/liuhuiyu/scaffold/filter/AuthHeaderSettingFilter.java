@@ -24,7 +24,7 @@ import java.util.Map;
 //@WebFilter
 @Log4j2
 @Order(1)
-@WebFilter(urlPatterns = "/*",filterName = "AuthHeaderFilter")
+@WebFilter(urlPatterns = "/*", filterName = "AuthHeaderFilter")
 public class AuthHeaderSettingFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -32,9 +32,9 @@ public class AuthHeaderSettingFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, @NotNull FilterChain filterChain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        RequestParameterWrapper requestParameterWrapper = new RequestParameterWrapper(request);
         if (MyConfiguration.getInstance().isSafety()) {
-            HttpServletRequest request = (HttpServletRequest) servletRequest;
-            RequestParameterWrapper requestParameterWrapper = new RequestParameterWrapper(request);
             try {
                 //http请求方法  post get
                 String httpMethod = request.getMethod().toLowerCase();
@@ -77,8 +77,8 @@ public class AuthHeaderSettingFilter implements Filter {
             catch (Exception ex) {
                 log.error(ex.getMessage());
             }
-            filterChain.doFilter(requestParameterWrapper, servletResponse);
         }
+        filterChain.doFilter(requestParameterWrapper, servletResponse);
     }
 
     @Override

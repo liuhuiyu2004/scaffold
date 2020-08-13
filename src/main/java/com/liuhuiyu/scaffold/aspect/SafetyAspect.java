@@ -35,7 +35,7 @@ public class SafetyAspect {
      * cn.huanzi.qch.baseadmin.sys.*.controller、
      * cn.huanzi.qch.baseadmin.*.controller包下面的所有方法
      */
-    @Pointcut(value = "within(com.liuhuiyu.gxhotdevice.controller.web..*)")
+    @Pointcut(value = "within(com.liuhuiyu.scaffold.controller.web..*)")
     public void safetyAspect() {
     }
 

@@ -23,13 +23,13 @@ import java.util.Objects;
  * @version v1.0.0.0
  * Created DateTime 2020-08-13 8:21
  */
-@Aspect
-@Component
-@Order(AspectPrecedenceConstant.LOGIN_ASPECT_PRECEDENCE)
+//@Aspect
+//@Component
+//@Order(AspectPrecedenceConstant.LOGIN_ASPECT_PRECEDENCE)
 public class LoginAspect extends BaseAspect {
     private final static Logger logger = LoggerFactory.getLogger(LoginAspect.class);
 
-    @Around(value = "within(com.liuhuiyu.gxhotdevice.controller.web.login..*) && @annotation(log)")
+    @Around(value = "within(com.liuhuiyu.scaffold.controller.web.login..*) && @annotation(log)")
     public Object logAround(ProceedingJoinPoint pjp, UserLogin login) throws Throwable {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         if(attributes == null) {
