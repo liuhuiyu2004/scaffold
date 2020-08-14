@@ -10,9 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  <script th:src="@{/js/jquery.min.js}"></script>
-  <script th:src="@{/js/vue.min.js}"></script>
-  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/common/js/jquery/jquery.min.js}"></script>
+  <script th:src="@{/common/js/vue/vue.min.js}"></script>
   <script th:inline="javascript">
     //获取api加密开关并存到sessionStorage
     sessionStorage.setItem('sysApiEncrypt', [[${@myConfiguration.isSafety()}]]);

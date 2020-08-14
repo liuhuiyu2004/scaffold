@@ -77,8 +77,9 @@ public class AuthHeaderSettingFilter implements Filter {
             catch (Exception ex) {
                 log.error(ex.getMessage());
             }
+            filterChain.doFilter(requestParameterWrapper, servletResponse);
         }
-        filterChain.doFilter(requestParameterWrapper, servletResponse);
+//
     }
 
     @Override
