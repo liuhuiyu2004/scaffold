@@ -10,7 +10,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * Created DateTime 2020-07-08 11:33
  */
 @SpringBootApplication
-@ServletComponentScan   //可以替代 configuration.FilterConfig
+//@ServletComponentScan   //可以替代 configuration.FilterConfig
 public class App {
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
