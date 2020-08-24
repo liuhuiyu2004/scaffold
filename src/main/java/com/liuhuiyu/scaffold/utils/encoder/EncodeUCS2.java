@@ -1,7 +1,4 @@
 package com.liuhuiyu.scaffold.utils.encoder;
-
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
-
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 
@@ -19,7 +16,7 @@ public class EncodeUCS2 {
      * @param src UCS2 源串
      * @return 解码后的UTF-16BE字符串
      */
-    public static String DecodeUCS2(String src) throws UnsupportedEncodingException {
+    public static String decodeUCS2(String src){
         byte[] bytes = new byte[src.length() / 2];
 
         for (int i = 0; i < src.length(); i += 2) {
@@ -27,7 +24,7 @@ public class EncodeUCS2 {
                     .parseInt(src.substring(i, i + 2), 16));
         }
         String reValue;
-        reValue = new String(bytes, "UTF-16BE");
+        reValue = new String(bytes, StandardCharsets.UTF_16BE);
         return reValue;
 
     }
@@ -38,12 +35,12 @@ public class EncodeUCS2 {
      * @param src UTF-16BE编码的源串
      * @return 编码后的UCS2串
      */
-    public static String encodeUCS2(String src, String prefix) throws UnsupportedEncodingException {
+    public static String encodeUCS2(String src) {
         byte[] bytes;
         bytes = src.getBytes(StandardCharsets.UTF_16BE);
 
         StringBuilder reValue = new StringBuilder();
-        reValue.append(prefix);
+//        reValue.append(prefix);
         StringBuilder tem = new StringBuilder();
         for (byte aByte : bytes) {
             tem.delete(0, tem.length());
