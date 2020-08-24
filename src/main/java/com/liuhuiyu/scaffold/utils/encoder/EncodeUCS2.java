@@ -3,6 +3,7 @@ package com.liuhuiyu.scaffold.utils.encoder;
 import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * 短信UCS2转换
@@ -26,7 +27,7 @@ public class EncodeUCS2 {
                     .parseInt(src.substring(i, i + 2), 16));
         }
         String reValue;
-            reValue = new String(bytes, "UTF-16BE");
+        reValue = new String(bytes, "UTF-16BE");
         return reValue;
 
     }
@@ -37,16 +38,16 @@ public class EncodeUCS2 {
      * @param src UTF-16BE编码的源串
      * @return 编码后的UCS2串
      */
-    public static String EncodeUCS2(String src) throws UnsupportedEncodingException {
-
+    public static String encodeUCS2(String src, String prefix) throws UnsupportedEncodingException {
         byte[] bytes;
-        bytes = src.getBytes("UTF-16BE");
+        bytes = src.getBytes(StandardCharsets.UTF_16BE);
 
-        StringBuffer reValue = new StringBuffer();
-        StringBuffer tem = new StringBuffer();
-        for (int i = 0; i < bytes.length; i++) {
+        StringBuilder reValue = new StringBuilder();
+        reValue.append(prefix);
+        StringBuilder tem = new StringBuilder();
+        for (byte aByte : bytes) {
             tem.delete(0, tem.length());
-            tem.append(Integer.toHexString(bytes[i] & 0xFF));
+            tem.append(Integer.toHexString(aByte & 0xFF));
             if (tem.length() == 1) {
                 tem.insert(0, '0');
             }
