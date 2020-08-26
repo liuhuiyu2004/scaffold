@@ -18,7 +18,7 @@ public class LinearGradient {
      *
      * @param boundaryList 要求格式[位置，边界值,......,位置，边界值,位置，边界值]
      */
-    public LinearGradient(int[] boundaryList) {
+    public LinearGradient(int[] boundaryList) throws IllegalArgumentException{
         int v = boundaryList[0] - 1;
         //参数验证
         for (int i = 0; i < boundaryList.length / 2; i += 2) {
@@ -98,10 +98,12 @@ public class LinearGradient {
         }
         else {
             int res = resBegin + ((resEnd - resBegin) * (val - valMin) / (valMax - valMin));
-            if (res < Math.min(resBegin, resEnd))
+            if (res < Math.min(resBegin, resEnd)) {
                 res = Math.min(resBegin, resEnd);
-            else if (res > Math.max(resBegin, resEnd))
+            }
+            else if (res > Math.max(resBegin, resEnd)) {
                 res = Math.max(resBegin, resEnd);
+            }
             return res;
         }
     }
