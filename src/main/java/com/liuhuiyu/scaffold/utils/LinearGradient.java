@@ -77,22 +77,6 @@ public class LinearGradient {
         int resBegin = info[1];
         int resEnd = info[3];
         return getValue(val, resBegin, resEnd, valMin, valMax);
-//        if (val <= valMin) {
-//            return resBegin;
-//        }
-//        else if (val >= valMax) {
-//            return resEnd;
-//        }
-//        else {
-//            int v2 = resEnd - resBegin;//返回值变化范围
-//            int v3 = (v2 * (val - valMin) / (valMax - valMin));/// v1;
-//            int res = resBegin + v3;
-//            if (res < Math.min(resBegin, resEnd))
-//                res = Math.min(resBegin, resEnd);
-//            else if (res > Math.max(resBegin, resEnd))
-//                res = Math.max(resBegin, resEnd);
-//            return res;
-//        }
     }
 
     /**
@@ -113,9 +97,7 @@ public class LinearGradient {
             return resEnd;
         }
         else {
-            int v2 = resEnd - resBegin;//返回值变化范围
-            int v3 = (v2 * (val - valMin) / (valMax - valMin));/// v1;
-            int res = resBegin + v3;
+            int res = resBegin + ((resEnd - resBegin) * (val - valMin) / (valMax - valMin));
             if (res < Math.min(resBegin, resEnd))
                 res = Math.min(resBegin, resEnd);
             else if (res > Math.max(resBegin, resEnd))
