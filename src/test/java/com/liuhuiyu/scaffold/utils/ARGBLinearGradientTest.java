@@ -36,26 +36,20 @@ public class ARGBLinearGradientTest extends TestCase {
     }
 
     public void testMinMaxValue() {
-        StringBuilder stringBuilder = new StringBuilder();
         Integer[] i = getIntList();
-
-//        for (int outI : i) {
-//            stringBuilder.append(" ").append(outI);
-//        }
-//        log.debug(stringBuilder);
-
-        long start = System.currentTimeMillis();
+        long start, end;
+        //region 最优解
+        start = System.currentTimeMillis();
         this.minMax01(i);
-        long end = System.currentTimeMillis();
+        end = System.currentTimeMillis();
         log.debug("{}组数据耗时：{}毫秒", i.length, end - start);
-//        start = System.currentTimeMillis();
-//        this.minMax02(i);
-//        end = System.currentTimeMillis();
-//        log.debug("{}组数据耗时：{}毫秒", i.length, end - start);
+        //endregion
+        //region 不是最优解
         start = System.currentTimeMillis();
         this.minMax03(i);
         end = System.currentTimeMillis();
         log.debug("{}组数据耗时：{}毫秒", i.length, end - start);
+        //endregion
     }
 
     private void minMax01(Integer[] intList) {
