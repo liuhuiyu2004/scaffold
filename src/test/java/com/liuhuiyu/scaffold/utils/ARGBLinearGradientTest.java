@@ -35,6 +35,9 @@ public class ARGBLinearGradientTest extends TestCase {
         log.debug("10进制输出 1<<8=" + Integer.toUnsignedString(j));
     }
 
+    /**
+     * 测试最大最小值最快算法
+     */
     public void testMinMaxValue() {
         Integer[] i = getIntList();
         long start, end;
@@ -116,7 +119,6 @@ public class ARGBLinearGradientTest extends TestCase {
 
     private Integer[] getIntList() {
         Random random = new Random();
-//        int i = random.nextInt(100);
         int[] list = random.ints(10_000_000).toArray();
         return Arrays.stream(list).boxed().toArray(Integer[]::new);
     }
