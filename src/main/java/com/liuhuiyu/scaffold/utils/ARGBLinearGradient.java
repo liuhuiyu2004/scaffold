@@ -15,19 +15,19 @@ public class ARGBLinearGradient {
     /**
      * 透明度线性渐变
      */
-    private LinearGradient a;
+    private final LinearGradient a;
     /**
      * 红色线性渐变
      */
-    private LinearGradient r;
+    private final LinearGradient r;
     /**
      * 绿色线性渐变
      */
-    private LinearGradient g;
+    private final LinearGradient g;
     /**
      * 蓝色线性渐变
      */
-    private LinearGradient b;
+    private final LinearGradient b;
     /**
      * 输入最小值
      */
