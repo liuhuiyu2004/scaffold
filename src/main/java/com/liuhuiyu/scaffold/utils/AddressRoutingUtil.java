@@ -32,20 +32,41 @@ public class AddressRoutingUtil {
      * @param parameter 参数对
      * @return 可以访问的地址
      */
-    public static String getFullAddress(HttpServletRequest request, String root, String path, Map<String, Object> parameter) {
-        String foot = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
-        String address;
-        address = foot + root + path;
+//    public static String getFullAddress(HttpServletRequest request, String root, String path, Map<String, Object> parameter) {
+//        String foot = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+//        String address;
+//        address = foot + root + path;
+//
+//        if (null != parameter) {
+//            String linkSymbol = "?";
+//            for (String key : parameter.keySet()) {
+//                address = String.format("%1$s%2$s%3$s=%4$s", address, linkSymbol, key, parameter.get(key).toString());
+//                linkSymbol = "&";
+//            }
+//        }
+//        return address;
+//    }
 
-        if (null == parameter) {
-            return address;
-        } else {
+    public static String getFullAddress(HttpServletRequest request, String root, String path, Map<String, Object> parameter) {
+        StringBuilder resBuilder = new StringBuilder();
+        resBuilder.append(request.getScheme())
+                .append("://")
+                .append(request.getServerName())
+                .append(":")
+                .append(request.getServerPort())
+                .append(request.getContextPath())
+                .append(root)
+                .append(path);
+        if (null != parameter) {
             String linkSymbol = "?";
             for (String key : parameter.keySet()) {
-                address = String.format("%1$s%2$s%3$s=%4$s", address, linkSymbol, key, parameter.get(key).toString());
+                resBuilder.append(linkSymbol)
+                        .append(key)
+                        .append("=")
+                        .append(parameter.get(key).toString());
                 linkSymbol = "&";
             }
-            return address;
         }
+        return resBuilder.toString();
     }
 }
