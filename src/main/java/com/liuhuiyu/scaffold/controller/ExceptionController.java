@@ -1,6 +1,5 @@
 package com.liuhuiyu.scaffold.controller;
 
-import com.liuhuiyu.scaffold.constant.enums.ResultEnum;
 import com.liuhuiyu.scaffold.domain.model.Result;
 import com.liuhuiyu.scaffold.exception.LhyException;
 import lombok.extern.log4j.Log4j2;
