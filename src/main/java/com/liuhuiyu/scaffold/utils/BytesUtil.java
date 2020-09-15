@@ -73,17 +73,6 @@ public class BytesUtil {
      */
     public static byte @NotNull [] fileToBytes(String fullFileName) throws IOException {
         return FileUtils.readFileToByteArray(new File(fullFileName));
-//        File file = new File(fullFileName);
-//        long fileSize = file.length();
-//        FileInputStream fileInputStream = new FileInputStream(fullFileName);
-//        byte[] buffer = new byte[(int) fileSize];
-//        int offset = 0;
-//        int numRead = 0;
-//        while (offset < buffer.length
-//                && (numRead = fileInputStream.read(buffer, offset, buffer.length - offset)) >= 0) {
-//            offset += numRead;
-//        }
-//        return buffer;
     }
 
     /**
