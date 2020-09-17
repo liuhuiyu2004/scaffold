@@ -131,12 +131,17 @@ public class FileUtil {
         return bool;
     }
 
-    public static String getCharset(File paramFile) {
+    /**
+     * 获取文件编码
+     * @param fileFullName 文件名
+     * @return  文件编码
+     */
+    public static String getCharset(File fileFullName) {
         String str = "GBK";
         byte[] arrayOfByte = new byte[3];
         try {
             int i = 0;
-            BufferedInputStream localBufferedInputStream = new BufferedInputStream(new FileInputStream(paramFile));
+            BufferedInputStream localBufferedInputStream = new BufferedInputStream(new FileInputStream(fileFullName));
             localBufferedInputStream.mark(0);
             int j = localBufferedInputStream.read(arrayOfByte, 0, 3);
             if (j == -1) {
@@ -189,10 +194,15 @@ public class FileUtil {
         return str;
     }
 
-    public static byte[] readByte(InputStream paramInputStream) {
+    /**
+     * 输入流读取字节码
+     * @param inputStream 输入流
+     * @return 字节码
+     */
+    public static byte[] readByte(InputStream inputStream) {
         try {
-            byte[] arrayOfByte = new byte[paramInputStream.available()];
-            paramInputStream.read(arrayOfByte);
+            byte[] arrayOfByte = new byte[inputStream.available()];
+            inputStream.read(arrayOfByte);
             return arrayOfByte;
         }
         catch (FileNotFoundException localFileNotFoundException) {
@@ -204,16 +214,24 @@ public class FileUtil {
         return null;
     }
 
-    public static byte[] readByte(String paramString) {
+    /**
+     * 获取文件字节码
+     * @param fileFullName 文件名
+     * @return 字节码
+     */
+    public static byte[] readByte(String fileFullName) {
         try {
-            FileInputStream localFileInputStream = new FileInputStream(paramString);
+            FileInputStream localFileInputStream = new FileInputStream(fileFullName);
             byte[] arrayOfByte = new byte[localFileInputStream.available()];
-            localFileInputStream.read(arrayOfByte);
+            int len=localFileInputStream.read(arrayOfByte);
+            if(len!=localFileInputStream.available()){
+                throw new IOException("文件长度错误。");
+            }
             localFileInputStream.close();
             return arrayOfByte;
         }
         catch (FileNotFoundException localFileNotFoundException) {
-            log.error("文件路径不存在：" + paramString);
+            log.error("文件路径不存在：" + fileFullName);
         }
         catch (Exception localException) {
             localException.printStackTrace();
