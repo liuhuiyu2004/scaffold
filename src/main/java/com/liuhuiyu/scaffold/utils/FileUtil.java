@@ -239,10 +239,16 @@ public class FileUtil {
         return null;
     }
 
-    public static boolean writeByte(String paramString, byte[] paramArrayOfByte) {
+    /**
+     * 字节码写入文件
+     * @param fileFullName 文件名
+     * @param buffer       写入内容
+     * @return 是否写入成功
+     */
+    public static boolean writeByte(String fileFullName, byte[] buffer) {
         try {
-            BufferedOutputStream localBufferedOutputStream = new BufferedOutputStream(new FileOutputStream(paramString));
-            localBufferedOutputStream.write(paramArrayOfByte);
+            BufferedOutputStream localBufferedOutputStream = new BufferedOutputStream(new FileOutputStream(fileFullName));
+            localBufferedOutputStream.write(buffer);
             localBufferedOutputStream.close();
             return true;
         }
@@ -252,23 +258,31 @@ public class FileUtil {
         return false;
     }
 
-    public static boolean deleteDir(File paramFile) {
-        if (paramFile.isDirectory()) {
-            String[] arrayOfString = paramFile.list();
-            for (int i = 0; i < arrayOfString.length; i++) {
-                boolean bool = deleteDir(new File(paramFile, arrayOfString[i]));
-                if (!bool) {
-                    return false;
-                }
+    /**
+     * 文件夹删除
+     * @param dir
+     * @return
+     */
+    public static boolean deleteDir(File dir) {
+        if (dir.isDirectory()) {
+            File[] arrayOfString = dir.listFiles();
+            for (File file : arrayOfString) {
+                if(deleteDir(file)){continue;}
+                return false;
             }
         }
-        return paramFile.delete();
+        return dir.delete();
     }
 
-    public static void serializeToFile(Object paramObject, String paramString) {
+    /**
+     * 序列化到文件
+     * @param obj          要序列化的对象
+     * @param fullFileName 保存的文件名称
+     */
+    public static void serializeToFile(Object obj, String fullFileName) {
         try {
-            ObjectOutputStream localObjectOutputStream = new ObjectOutputStream(new FileOutputStream(paramString));
-            localObjectOutputStream.writeObject(paramObject);
+            ObjectOutputStream localObjectOutputStream = new ObjectOutputStream(new FileOutputStream(fullFileName));
+            localObjectOutputStream.writeObject(obj);
             localObjectOutputStream.close();
         }
         catch (IOException localIOException) {
@@ -276,9 +290,14 @@ public class FileUtil {
         }
     }
 
-    public static Object deserializeFromFile(String paramString) {
+    /**
+     * 反序列化到对象
+     * @param fullFileName 文件名
+     * @return 对象
+     */
+    public static Object deserializeFromFile(String fullFileName) {
         try {
-            File localFile = new File(paramString);
+            File localFile = new File(fullFileName);
             ObjectInputStream localObjectInputStream = new ObjectInputStream(new FileInputStream(localFile));
             Object localObject = localObjectInputStream.readObject();
             localObjectInputStream.close();
@@ -290,24 +309,42 @@ public class FileUtil {
         return null;
     }
 
-    public static String inputStream2String(InputStream paramInputStream, String paramString)
+    /**
+     * 输入流到文件
+     * @param inputStream  输入流
+     * @param fullFileName 文件名
+     * @return 输入的内容
+     * @throws IOException IOException
+     */
+    public static String inputStream2String(InputStream inputStream, String fullFileName)
             throws IOException {
-        BufferedReader localBufferedReader = new BufferedReader(new InputStreamReader(paramInputStream, paramString));
-        StringBuffer localStringBuffer = new StringBuffer();
+        BufferedReader localBufferedReader = new BufferedReader(new InputStreamReader(inputStream, fullFileName));
+        StringBuilder localStringBuffer = new StringBuilder();
         String str = "";
         while ((str = localBufferedReader.readLine()) != null) {
-            localStringBuffer.append(str + "\n");
+            localStringBuffer.append(str).append("\n");
         }
         return localStringBuffer.toString();
     }
 
-    public static String inputStream2String(InputStream paramInputStream)
+    /**
+     * 输入流内容读取
+     * @param inputStream 输入流
+     * @return 流内容
+     * @throws IOException IOException
+     */
+    public static String inputStream2String(InputStream inputStream)
             throws IOException {
-        return inputStream2String(paramInputStream, "utf-8");
+        return inputStream2String(inputStream, "utf-8");
     }
 
-    public static File[] getFiles(String paramString) {
-        File localFile = new File(paramString);
+    /**
+     * 获取文件夹内的文件
+     * @param dir 文件夹名称
+     * @return 内部文件/文件夹
+     */
+    public static File[] getFiles(String dir) {
+        File localFile = new File(dir);
         return localFile.listFiles();
     }
 
