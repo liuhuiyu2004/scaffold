@@ -17,11 +17,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
@@ -30,9 +27,7 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Properties;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author LiuHuiYu
@@ -85,7 +80,7 @@ public class FileUtil {
             throws IOException {
         FileOutputStream localFileOutputStream = new FileOutputStream(fileFullName);
         byte[] arrayOfByte = new byte['Ȁ'];
-        int i = 0;
+        int i;
         while ((i = inputStream.read(arrayOfByte)) != -1) {
             localFileOutputStream.write(arrayOfByte, 0, i);
         }
@@ -116,8 +111,9 @@ public class FileUtil {
 
     /**
      * 是否是非空文件夹
+     *
      * @param fileFullName 完整文件名
-     * @return  是否是非空文件夹
+     * @return 是否是非空文件夹
      */
     public static boolean isExistFile(String fileFullName) {
         boolean bool = false;
@@ -133,8 +129,9 @@ public class FileUtil {
 
     /**
      * 获取文件编码
+     *
      * @param fileFullName 文件名
-     * @return  文件编码
+     * @return 文件编码
      */
     public static String getCharset(File fileFullName) {
         String str = "GBK";
@@ -161,10 +158,8 @@ public class FileUtil {
             }
             localBufferedInputStream.reset();
             if (i == 0) {
-                int k = 0;
                 while ((j = localBufferedInputStream.read()) != -1) {
-                    k++;
-                    if ((j < 240) && ((128 > j) || (j > 191))) {
+                    if ((j < 128) || ((j < 240) && (j > 191))) {
                         if ((192 <= j) && (j <= 223)) {
                             j = localBufferedInputStream.read();
                             if (128 > j) {
@@ -174,7 +169,7 @@ public class FileUtil {
                                 break;
                             }
                         }
-                        else if ((224 <= j) && (j <= 239)) {
+                        else if (224 <= j) {
                             j = localBufferedInputStream.read();
                             if ((128 <= j) && (j <= 191)) {
                                 j = localBufferedInputStream.read();
@@ -196,6 +191,7 @@ public class FileUtil {
 
     /**
      * 输入流读取字节码
+     *
      * @param inputStream 输入流
      * @return 字节码
      */
@@ -216,6 +212,7 @@ public class FileUtil {
 
     /**
      * 获取文件字节码
+     *
      * @param fileFullName 文件名
      * @return 字节码
      */
@@ -223,8 +220,8 @@ public class FileUtil {
         try {
             FileInputStream localFileInputStream = new FileInputStream(fileFullName);
             byte[] arrayOfByte = new byte[localFileInputStream.available()];
-            int len=localFileInputStream.read(arrayOfByte);
-            if(len!=localFileInputStream.available()){
+            int len = localFileInputStream.read(arrayOfByte);
+            if (len != localFileInputStream.available()) {
                 throw new IOException("文件长度错误。");
             }
             localFileInputStream.close();
@@ -241,6 +238,7 @@ public class FileUtil {
 
     /**
      * 字节码写入文件
+     *
      * @param fileFullName 文件名
      * @param buffer       写入内容
      * @return 是否写入成功
@@ -260,6 +258,7 @@ public class FileUtil {
 
     /**
      * 文件夹删除
+     *
      * @param dir
      * @return
      */
@@ -267,7 +266,9 @@ public class FileUtil {
         if (dir.isDirectory()) {
             File[] arrayOfString = dir.listFiles();
             for (File file : arrayOfString) {
-                if(deleteDir(file)){continue;}
+                if (deleteDir(file)) {
+                    continue;
+                }
                 return false;
             }
         }
@@ -276,6 +277,7 @@ public class FileUtil {
 
     /**
      * 序列化到文件
+     *
      * @param obj          要序列化的对象
      * @param fullFileName 保存的文件名称
      */
@@ -292,6 +294,7 @@ public class FileUtil {
 
     /**
      * 反序列化到对象
+     *
      * @param fullFileName 文件名
      * @return 对象
      */
@@ -311,6 +314,7 @@ public class FileUtil {
 
     /**
      * 输入流到文件
+     *
      * @param inputStream  输入流
      * @param fullFileName 文件名
      * @return 输入的内容
@@ -329,6 +333,7 @@ public class FileUtil {
 
     /**
      * 输入流内容读取
+     *
      * @param inputStream 输入流
      * @return 流内容
      * @throws IOException IOException
@@ -340,6 +345,7 @@ public class FileUtil {
 
     /**
      * 获取文件夹内的文件
+     *
      * @param dir 文件夹名称
      * @return 内部文件/文件夹
      */
@@ -348,6 +354,11 @@ public class FileUtil {
         return localFile.listFiles();
     }
 
+    /**
+     * 创建文件夹
+     *
+     * @param paramString 文件夹名称
+     */
     public static void createFolderFile(String paramString) {
         createFolder(paramString, true);
     }
@@ -379,11 +390,19 @@ public class FileUtil {
 //        localFile.mkdir();
 //    }
 
-    public static void renameFolder(String paramString1, String paramString2) {
+    /**
+     * 文件夹名改名
+     *
+     * @param paramString1 原始名称
+     * @param paramString2 修改后名称
+     * @return 修改是否成功
+     */
+    public static boolean renameFolder(String paramString1, String paramString2) {
         File localFile = new File(paramString1);
         if (localFile.exists()) {
-            localFile.renameTo(new File(paramString2));
+            return localFile.renameTo(new File(paramString2));
         }
+        return false;
     }
 
     public static ArrayList<File> getDiretoryOnly(File paramFile) {
