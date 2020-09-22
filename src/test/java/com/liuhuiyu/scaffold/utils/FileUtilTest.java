@@ -17,13 +17,24 @@ import java.io.InputStream;
 public class FileUtilTest extends TestCase {
     String file = "E:\\temp\\a.txt";
     String file2 = "E:\\temp\\a2.txt";
+    String file3 = "E:\\temp\\a3Bytes.txt";
     String info = "测试录入";
 
     public void testWriteFile() {
         FileUtil.writeFile(this.file, this.info);
     }
+
     public void testWriteFile2() throws IOException {
-        InputStream inputStream=new FileInputStream(file);
+        InputStream inputStream = new FileInputStream(file);
         FileUtil.writeFile(this.file2, inputStream);
+    }
+
+    public void testWriteByte() {
+        byte[] bytes = new byte[]{0x63,0x64};
+        if(FileUtil.writeByte(this.file3, bytes)) {
+            log.debug("OK");
+        }else{
+            log.debug("error");
+        }
     }
 }

@@ -198,7 +198,10 @@ public class FileUtil {
     public static byte[] readByte(InputStream inputStream) {
         try {
             byte[] arrayOfByte = new byte[inputStream.available()];
-            inputStream.read(arrayOfByte);
+            int r = inputStream.read(arrayOfByte);
+            if (r != arrayOfByte.length) {
+                throw new IOException("读取数据长度错误。");
+            }
             return arrayOfByte;
         }
         catch (FileNotFoundException localFileNotFoundException) {
@@ -259,8 +262,8 @@ public class FileUtil {
     /**
      * 文件夹删除
      *
-     * @param dir
-     * @return
+     * @param dir   文件夹
+     * @return  是否删除成功
      */
     public static boolean deleteDir(File dir) {
         if (dir.isDirectory()) {
