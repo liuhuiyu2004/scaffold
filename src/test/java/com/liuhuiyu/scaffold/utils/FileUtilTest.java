@@ -37,4 +37,9 @@ public class FileUtilTest extends TestCase {
             log.debug("error");
         }
     }
+    public void testDeserializeFromFile(){
+        Object o=FileUtil.deserializeFromFile(this.file3);
+        assert o != null;
+        log.debug(o.toString());
+    }
 }

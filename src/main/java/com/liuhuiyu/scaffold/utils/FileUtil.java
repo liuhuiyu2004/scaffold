@@ -327,7 +327,7 @@ public class FileUtil {
             throws IOException {
         BufferedReader localBufferedReader = new BufferedReader(new InputStreamReader(inputStream, fullFileName));
         StringBuilder localStringBuffer = new StringBuilder();
-        String str = "";
+        String str;
         while ((str = localBufferedReader.readLine()) != null) {
             localStringBuffer.append(str).append("\n");
         }
