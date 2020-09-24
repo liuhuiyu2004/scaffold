@@ -30,16 +30,33 @@ public class FileUtilTest extends TestCase {
     }
 
     public void testWriteByte() {
-        byte[] bytes = new byte[]{0x63,0x64};
-        if(FileUtil.writeByte(this.file3, bytes)) {
+        byte[] bytes = new byte[]{0x63, 0x64};
+        if (FileUtil.writeByte(this.file3, bytes)) {
             log.debug("OK");
-        }else{
+        }
+        else {
             log.debug("error");
         }
     }
-    public void testDeserializeFromFile(){
-        Object o=FileUtil.deserializeFromFile(this.file3);
+
+    public void testDeserializeFromFile() {
+        Object o = FileUtil.deserializeFromFile(this.file3);
         assert o != null;
         log.debug(o.toString());
+    }
+
+    public void testInputStream2String() throws IOException {
+        InputStream inputStream = new FileInputStream(file);
+        String info = FileUtil.inputStream2String(inputStream);
+        log.debug(info);
+    }
+
+    public void testCreateFolderFile() {
+        FileUtil.createFolderFile("d://a/b/c");
+    }
+
+    public void testRenameFolder() {
+        boolean b = FileUtil.renameFolder("d://a/b", "d://a/c");
+        log.debug("renameFolder = " + b);
     }
 }

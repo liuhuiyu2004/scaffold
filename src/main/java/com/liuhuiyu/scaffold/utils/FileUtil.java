@@ -360,10 +360,10 @@ public class FileUtil {
     /**
      * 创建文件夹
      *
-     * @param paramString 文件夹名称
+     * @param dir 文件夹名称
      */
-    public static void createFolderFile(String paramString) {
-        createFolder(paramString, true);
+    public static void createFolderFile(String dir) {
+        createFolder(dir, true);
     }
 
     /**
