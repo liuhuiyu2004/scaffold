@@ -9,7 +9,6 @@ import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,11 +21,7 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -262,8 +257,8 @@ public class FileUtil {
     /**
      * 文件夹删除
      *
-     * @param dir   文件夹
-     * @return  是否删除成功
+     * @param dir 文件夹
+     * @return 是否删除成功
      */
     public static boolean deleteDir(File dir) {
         if (dir.isDirectory()) {
@@ -408,34 +403,39 @@ public class FileUtil {
         return false;
     }
 
-    public static ArrayList<File> getDiretoryOnly(File paramFile) {
-        ArrayList localArrayList = new ArrayList();
-        if ((paramFile != null) && (paramFile.exists()) && (paramFile.isDirectory())) {
-            File[] arrayOfFile = paramFile.listFiles(new FileFilter() {
-                public boolean accept(File paramAnonymousFile) {
-                    return paramAnonymousFile.isDirectory();
-                }
-            });
-            for (int i = 0; i < arrayOfFile.length; i++) {
-                localArrayList.add(arrayOfFile[i]);
-            }
+    /**
+     * 指定文件目录下 子目录获取
+     * @param dir 目录
+     * @return 子目录
+     */
+    public static ArrayList<File> getDiretoryOnly(File dir) {
+        ArrayList<File> localArrayList = new ArrayList<>();
+        if ((dir != null) && (dir.exists()) && (dir.isDirectory())) {
+            File[] arrayOfFile = dir.listFiles(File::isDirectory);
+            Collections.addAll(localArrayList, arrayOfFile);
         }
         return localArrayList;
     }
 
-    public ArrayList<File> getFileOnly(File paramFile) {
-        ArrayList localArrayList = new ArrayList();
-        File[] arrayOfFile = paramFile.listFiles(new FileFilter() {
-            public boolean accept(File paramAnonymousFile) {
-                return paramAnonymousFile.isFile();
-            }
-        });
-        for (int i = 0; i < arrayOfFile.length; i++) {
-            localArrayList.add(arrayOfFile[i]);
+    /**
+     * 获取文件夹下的文件
+     * @param dir 文件夹
+     * @return  文件列表
+     */
+    public ArrayList<File> getFileOnly(File dir) {
+        ArrayList<File> localArrayList = new ArrayList<>();
+        if ((dir != null) && (dir.exists()) && (dir.isDirectory())){
+            File[] arrayOfFile = dir.listFiles(File::isFile);
+            localArrayList.addAll(Arrays.asList(arrayOfFile));
         }
         return localArrayList;
     }
 
+    /**
+     * 文件删除
+     * @param paramString   文件名
+     * @return  是否删除成功
+     */
     public static boolean deleteFile(String paramString) {
         File localFile = new File(paramString);
         return localFile.delete();
