@@ -2,11 +2,12 @@ package com.liuhuiyu.scaffold.utils;
 
 import junit.framework.TestCase;
 import lombok.extern.log4j.Log4j2;
+import org.aspectj.weaver.ast.Var;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author LiuHuiYu
@@ -58,5 +59,10 @@ public class FileUtilTest extends TestCase {
     public void testRenameFolder() {
         boolean b = FileUtil.renameFolder("d://a/b", "d://a/c");
         log.debug("renameFolder = " + b);
+    }
+
+    public void testGetFiles() {
+        List<File> fileList = Arrays.asList(FileUtil.getFiles(file));
+        fileList.forEach(log::debug);
     }
 }
