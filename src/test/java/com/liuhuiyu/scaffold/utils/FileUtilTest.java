@@ -65,4 +65,13 @@ public class FileUtilTest extends TestCase {
         List<File> fileList = Arrays.asList(FileUtil.getFiles(file));
         fileList.forEach(log::debug);
     }
+
+    public void testGetFileOnly() {
+        ArrayList<File> files = FileUtil.getFileOnly(new File("E:\\temp"));
+        files.forEach(log::debug);
+    }
+    public void testGetDirectoryOnly(){
+        ArrayList<File> files = FileUtil.getDirectoryOnly(new File("E:\\temp"));
+        files.forEach(log::debug);
+    }
 }

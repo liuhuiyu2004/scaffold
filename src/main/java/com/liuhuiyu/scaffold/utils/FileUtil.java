@@ -408,7 +408,7 @@ public class FileUtil {
      * @param dir 目录
      * @return 子目录
      */
-    public static ArrayList<File> getDiretoryOnly(File dir) {
+    public static ArrayList<File> getDirectoryOnly(File dir) {
         ArrayList<File> localArrayList = new ArrayList<>();
         if ((dir != null) && (dir.exists()) && (dir.isDirectory())) {
             File[] arrayOfFile = dir.listFiles(File::isDirectory);
@@ -422,7 +422,7 @@ public class FileUtil {
      * @param dir 文件夹
      * @return  文件列表
      */
-    public ArrayList<File> getFileOnly(File dir) {
+    public static ArrayList<File> getFileOnly(File dir) {
         ArrayList<File> localArrayList = new ArrayList<>();
         if ((dir != null) && (dir.exists()) && (dir.isDirectory())){
             File[] arrayOfFile = dir.listFiles(File::isFile);
