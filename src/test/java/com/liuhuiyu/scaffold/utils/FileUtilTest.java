@@ -32,7 +32,7 @@ public class FileUtilTest extends TestCase {
 
     public void testWriteByte() {
         byte[] bytes = new byte[]{0x63, 0x64};
-        if (FileUtil.writeByte(this.file3, bytes)) {
+        if(FileUtil.writeByte(this.file3, bytes)) {
             log.debug("OK");
         }
         else {
@@ -70,8 +70,15 @@ public class FileUtilTest extends TestCase {
         ArrayList<File> files = FileUtil.getFileOnly(new File("E:\\temp"));
         files.forEach(log::debug);
     }
-    public void testGetDirectoryOnly(){
+
+    public void testGetDirectoryOnly() {
         ArrayList<File> files = FileUtil.getDirectoryOnly(new File("E:\\temp"));
         files.forEach(log::debug);
+    }
+
+    public void testGetFileExt() {
+        File file = new File("E:\\temp");
+        String ext = FileUtil.getFileExt(file);
+        log.debug(ext);
     }
 }

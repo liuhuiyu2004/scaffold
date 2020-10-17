@@ -50,7 +50,7 @@ public class FileUtil {
      */
     public static void writeFile(String fileFullName, String info, String charsetName) {
         try {
-            if (createFolder(fileFullName, true)) {
+            if(createFolder(fileFullName, true)) {
                 BufferedWriter localBufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileFullName), charsetName));
                 localBufferedWriter.write(info);
                 localBufferedWriter.close();
@@ -58,8 +58,7 @@ public class FileUtil {
             else {
                 log.error("文件创建失败");
             }
-        }
-        catch (IOException localIOException) {
+        } catch(IOException localIOException) {
             log.error("IO异常：" + localIOException.toString());
         }
     }
@@ -76,7 +75,7 @@ public class FileUtil {
         FileOutputStream localFileOutputStream = new FileOutputStream(fileFullName);
         byte[] arrayOfByte = new byte['Ȁ'];
         int i;
-        while ((i = inputStream.read(arrayOfByte)) != -1) {
+        while((i = inputStream.read(arrayOfByte)) != -1) {
             localFileOutputStream.write(arrayOfByte, 0, i);
         }
         inputStream.close();
@@ -97,7 +96,7 @@ public class FileUtil {
         StringBuilder localStringBuffer = new StringBuilder();
         BufferedReader localBufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fileFullName), str1));
         String str2;
-        while ((str2 = localBufferedReader.readLine()) != null) {
+        while((str2 = localBufferedReader.readLine()) != null) {
             localStringBuffer.append(str2).append("\r\n");
         }
         localBufferedReader.close();
@@ -113,9 +112,9 @@ public class FileUtil {
     public static boolean isExistFile(String fileFullName) {
         boolean bool = false;
         File localFile = new File(fileFullName);
-        if (localFile.isDirectory()) {
+        if(localFile.isDirectory()) {
             File[] arrayOfFile = localFile.listFiles();
-            if ((arrayOfFile != null) && (arrayOfFile.length != 0)) {
+            if((arrayOfFile != null) && (arrayOfFile.length != 0)) {
                 bool = true;
             }
         }
@@ -136,39 +135,39 @@ public class FileUtil {
             BufferedInputStream localBufferedInputStream = new BufferedInputStream(new FileInputStream(fileFullName));
             localBufferedInputStream.mark(0);
             int j = localBufferedInputStream.read(arrayOfByte, 0, 3);
-            if (j == -1) {
+            if(j == -1) {
                 return str;
             }
-            if ((arrayOfByte[0] == -1) && (arrayOfByte[1] == -2)) {
+            if((arrayOfByte[0] == -1) && (arrayOfByte[1] == -2)) {
                 str = "UTF-16LE";
                 i = 1;
             }
-            else if ((arrayOfByte[0] == -2) && (arrayOfByte[1] == -1)) {
+            else if((arrayOfByte[0] == -2) && (arrayOfByte[1] == -1)) {
                 str = "UTF-16BE";
                 i = 1;
             }
-            else if ((arrayOfByte[0] == -17) && (arrayOfByte[1] == -69) && (arrayOfByte[2] == -65)) {
+            else if((arrayOfByte[0] == -17) && (arrayOfByte[1] == -69) && (arrayOfByte[2] == -65)) {
                 str = "UTF-8";
                 i = 1;
             }
             localBufferedInputStream.reset();
-            if (i == 0) {
-                while ((j = localBufferedInputStream.read()) != -1) {
-                    if ((j < 128) || ((j < 240) && (j > 191))) {
-                        if ((192 <= j) && (j <= 223)) {
+            if(i == 0) {
+                while((j = localBufferedInputStream.read()) != -1) {
+                    if((j < 128) || ((j < 240) && (j > 191))) {
+                        if((192 <= j) && (j <= 223)) {
                             j = localBufferedInputStream.read();
-                            if (128 > j) {
+                            if(128 > j) {
                                 break;
                             }
-                            if (j > 191) {
+                            if(j > 191) {
                                 break;
                             }
                         }
-                        else if (224 <= j) {
+                        else if(224 <= j) {
                             j = localBufferedInputStream.read();
-                            if ((128 <= j) && (j <= 191)) {
+                            if((128 <= j) && (j <= 191)) {
                                 j = localBufferedInputStream.read();
-                                if ((128 <= j) && (j <= 191)) {
+                                if((128 <= j) && (j <= 191)) {
                                     str = "UTF-8";
                                 }
                             }
@@ -177,8 +176,7 @@ public class FileUtil {
                 }
             }
             localBufferedInputStream.close();
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
         }
         return str;
@@ -194,15 +192,13 @@ public class FileUtil {
         try {
             byte[] arrayOfByte = new byte[inputStream.available()];
             int r = inputStream.read(arrayOfByte);
-            if (r != arrayOfByte.length) {
+            if(r != arrayOfByte.length) {
                 throw new IOException("读取数据长度错误。");
             }
             return arrayOfByte;
-        }
-        catch (FileNotFoundException localFileNotFoundException) {
+        } catch(FileNotFoundException localFileNotFoundException) {
             log.error("文件路径不存在：" + localFileNotFoundException.getMessage());
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
         }
         return null;
@@ -219,16 +215,14 @@ public class FileUtil {
             FileInputStream localFileInputStream = new FileInputStream(fileFullName);
             byte[] arrayOfByte = new byte[localFileInputStream.available()];
             int len = localFileInputStream.read(arrayOfByte);
-            if (len != localFileInputStream.available()) {
+            if(len != localFileInputStream.available()) {
                 throw new IOException("文件长度错误。");
             }
             localFileInputStream.close();
             return arrayOfByte;
-        }
-        catch (FileNotFoundException localFileNotFoundException) {
+        } catch(FileNotFoundException localFileNotFoundException) {
             log.error("文件路径不存在：" + fileFullName);
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
         }
         return null;
@@ -247,8 +241,7 @@ public class FileUtil {
             localBufferedOutputStream.write(buffer);
             localBufferedOutputStream.close();
             return true;
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
         }
         return false;
@@ -261,10 +254,10 @@ public class FileUtil {
      * @return 是否删除成功
      */
     public static boolean deleteDir(File dir) {
-        if (dir.isDirectory()) {
+        if(dir.isDirectory()) {
             File[] arrayOfString = dir.listFiles();
-            for (File file : arrayOfString) {
-                if (deleteDir(file)) {
+            for(File file : arrayOfString) {
+                if(deleteDir(file)) {
                     continue;
                 }
                 return false;
@@ -284,8 +277,7 @@ public class FileUtil {
             ObjectOutputStream localObjectOutputStream = new ObjectOutputStream(new FileOutputStream(fullFileName));
             localObjectOutputStream.writeObject(obj);
             localObjectOutputStream.close();
-        }
-        catch (IOException localIOException) {
+        } catch(IOException localIOException) {
             localIOException.printStackTrace();
         }
     }
@@ -303,8 +295,7 @@ public class FileUtil {
             Object localObject = localObjectInputStream.readObject();
             localObjectInputStream.close();
             return localObject;
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
         }
         return null;
@@ -323,7 +314,7 @@ public class FileUtil {
         BufferedReader localBufferedReader = new BufferedReader(new InputStreamReader(inputStream, fullFileName));
         StringBuilder localStringBuffer = new StringBuilder();
         String str;
-        while ((str = localBufferedReader.readLine()) != null) {
+        while((str = localBufferedReader.readLine()) != null) {
             localStringBuffer.append(str).append("\n");
         }
         return localStringBuffer.toString();
@@ -369,11 +360,11 @@ public class FileUtil {
      * @return 文件夹是否存在
      */
     public static boolean createFolder(String fileFullName, boolean isFile) {
-        if (isFile) {
+        if(isFile) {
             fileFullName = fileFullName.substring(0, fileFullName.lastIndexOf(File.separator));
         }
         File localFile = new File(fileFullName);
-        if (!localFile.exists()) {
+        if(!localFile.exists()) {
             return localFile.mkdirs();
         }
         else {
@@ -397,7 +388,7 @@ public class FileUtil {
      */
     public static boolean renameFolder(String paramString1, String paramString2) {
         File localFile = new File(paramString1);
-        if (localFile.exists()) {
+        if(localFile.exists()) {
             return localFile.renameTo(new File(paramString2));
         }
         return false;
@@ -405,12 +396,13 @@ public class FileUtil {
 
     /**
      * 指定文件目录下 子目录获取
+     *
      * @param dir 目录
      * @return 子目录
      */
     public static ArrayList<File> getDirectoryOnly(File dir) {
         ArrayList<File> localArrayList = new ArrayList<>();
-        if ((dir != null) && (dir.exists()) && (dir.isDirectory())) {
+        if((dir != null) && (dir.exists()) && (dir.isDirectory())) {
             File[] arrayOfFile = dir.listFiles(File::isDirectory);
             Collections.addAll(localArrayList, arrayOfFile);
         }
@@ -419,12 +411,13 @@ public class FileUtil {
 
     /**
      * 获取文件夹下的文件
+     *
      * @param dir 文件夹
-     * @return  文件列表
+     * @return 文件列表
      */
     public static ArrayList<File> getFileOnly(File dir) {
         ArrayList<File> localArrayList = new ArrayList<>();
-        if ((dir != null) && (dir.exists()) && (dir.isDirectory())){
+        if((dir != null) && (dir.exists()) && (dir.isDirectory())) {
             File[] arrayOfFile = dir.listFiles(File::isFile);
             localArrayList.addAll(Arrays.asList(arrayOfFile));
         }
@@ -433,8 +426,9 @@ public class FileUtil {
 
     /**
      * 文件删除
-     * @param paramString   文件名
-     * @return  是否删除成功
+     *
+     * @param paramString 文件名
+     * @return 是否删除成功
      */
     public static boolean deleteFile(String paramString) {
         File localFile = new File(paramString);
@@ -444,63 +438,67 @@ public class FileUtil {
     public static boolean copyFile(String paramString1, String paramString2) {
         File localFile1 = new File(paramString1);
         File localFile2 = new File(paramString2);
-        FileInputStream localFileInputStream = null;
-        FileOutputStream localFileOutputStream = null;
+        FileInputStream localFileInputStream;
+        FileOutputStream localFileOutputStream;
         try {
             localFileInputStream = new FileInputStream(localFile1);
             localFileOutputStream = new FileOutputStream(localFile2);
             byte[] arrayOfByte = new byte['က'];
             int i;
-            while ((i = localFileInputStream.read(arrayOfByte)) != -1) {
+            while((i = localFileInputStream.read(arrayOfByte)) != -1) {
                 localFileOutputStream.write(arrayOfByte, 0, i);
             }
             localFileOutputStream.flush();
             localFileOutputStream.close();
             localFileInputStream.close();
-        }
-        catch (IOException localIOException) {
+        } catch(IOException localIOException) {
             localIOException.printStackTrace();
             return false;
         }
         return true;
     }
 
-    public static void backupFile(String paramString) {
+    public static void backupFile(String paramString) throws IOException {
         String str = paramString + ".bak";
         File localFile = new File(str);
-        if (localFile.exists()) {
-            localFile.delete();
+        if(localFile.exists()) {
+            if(!localFile.delete()) {
+                throw new IOException("已有文件清理失败。");
+            }
         }
         copyFile(paramString, str);
     }
 
-    public static String getFileExt(File paramFile) {
-        if (paramFile.isFile()) {
-            return getFileExt(paramFile.getName());
+    public static String getFileExt(File file) {
+        if(file.isFile()) {
+            return getFileExt(file.getName());
         }
-        return "";
+        else {
+            return "";
+        }
     }
 
     public static String getFileExt(String paramString) {
         int i = paramString.lastIndexOf(".");
-        if (i > -1) {
+        if(i > -1) {
             return paramString.substring(i + 1).toLowerCase();
         }
         return "";
     }
 
-    public static void copyDir(String paramString1, String paramString2)
+    public static void copyDir(String dir1, String dir2)
             throws IOException {
-        new File(paramString2).mkdirs();
-        File[] arrayOfFile = new File(paramString1).listFiles();
-        for (int i = 0; i < arrayOfFile.length; i++) {
-            if (arrayOfFile[i].isFile()) {
+        File mkdir2=new File(dir2);
+        mkdir2.mkdirs();
+        File[] arrayOfFile = new File(dir1).listFiles();
+        for(int i = 0; i < arrayOfFile.length; i++) {
+            if(arrayOfFile[i].isFile()) {
                 String str1 = arrayOfFile[i].getAbsolutePath();
-                String str2 = paramString2 + "/" + arrayOfFile[i].getName();
+                String str2 = dir2 + "/" + arrayOfFile[i].getName();
                 copyFile(str1, str2);
             }
-            if (arrayOfFile[i].isDirectory()) {
-                copyDirectiory(paramString1 + "/" + arrayOfFile[i].getName(), paramString2 + "/" + arrayOfFile[i].getName());
+            if(arrayOfFile[i].isDirectory()) {
+                copyDirectiory(dir1 + "/" + arrayOfFile[i].getName(), dir2 + "/" + arrayOfFile[i].getName());
             }
         }
     }
@@ -509,13 +507,13 @@ public class FileUtil {
             throws IOException {
         new File(paramString2).mkdirs();
         File[] arrayOfFile = new File(paramString1).listFiles();
-        for (int i = 0; i < arrayOfFile.length; i++) {
-            if (arrayOfFile[i].isFile()) {
+        for(int i = 0; i < arrayOfFile.length; i++) {
+            if(arrayOfFile[i].isFile()) {
                 String str1 = arrayOfFile[i].getAbsolutePath();
                 String str2 = paramString2 + "/" + arrayOfFile[i].getName();
                 copyFile(str1, str2);
             }
-            if (arrayOfFile[i].isDirectory()) {
+            if(arrayOfFile[i].isDirectory()) {
                 copyDirectiory(paramString1 + "/" + arrayOfFile[i].getName(), paramString2 + "/" + arrayOfFile[i].getName());
             }
         }
@@ -523,7 +521,7 @@ public class FileUtil {
 
     public static String getFileSize(File paramFile)
             throws IOException {
-        if (paramFile.isFile()) {
+        if(paramFile.isFile()) {
             FileInputStream localFileInputStream = new FileInputStream(paramFile);
             int i = localFileInputStream.available();
             localFileInputStream.close();
@@ -535,11 +533,11 @@ public class FileUtil {
     public static String getSize(double paramDouble) {
         DecimalFormat localDecimalFormat = new DecimalFormat("0.00");
         double d;
-        if (paramDouble > 1048576.0D) {
+        if(paramDouble > 1048576.0D) {
             d = paramDouble / 1048576.0D;
             return localDecimalFormat.format(d) + " M";
         }
-        if (paramDouble > 1024.0D) {
+        if(paramDouble > 1024.0D) {
             d = paramDouble / 1024.0D;
             return localDecimalFormat.format(d) + " KB";
         }
@@ -616,10 +614,10 @@ public class FileUtil {
 
     private static String transCharacter(HttpServletRequest paramHttpServletRequest, String paramString)
             throws Exception {
-        if (paramHttpServletRequest.getHeader("USER-AGENT").toLowerCase().indexOf("msie") > 0) {
+        if(paramHttpServletRequest.getHeader("USER-AGENT").toLowerCase().indexOf("msie") > 0) {
             return URLEncoder.encode(paramString, "UTF-8");
         }
-        if (paramHttpServletRequest.getHeader("USER-AGENT").toLowerCase().indexOf("firefox") > 0) {
+        if(paramHttpServletRequest.getHeader("USER-AGENT").toLowerCase().indexOf("firefox") > 0) {
             return new String(paramString.getBytes("UTF-8"), "ISO8859-1");
         }
         return new String(paramString.getBytes("gbk"), "ISO8859-1");
@@ -654,16 +652,13 @@ public class FileUtil {
             str1 = localProperties.getProperty(paramString2);
             String str2 = str1;
             return str2;
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
-        }
-        finally {
-            if (localBufferedInputStream != null) {
+        } finally {
+            if(localBufferedInputStream != null) {
                 try {
                     localBufferedInputStream.close();
-                }
-                catch (IOException localIOException3) {
+                } catch(IOException localIOException3) {
                     localIOException3.printStackTrace();
                 }
             }
@@ -678,8 +673,8 @@ public class FileUtil {
         try {
             localBufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(paramString1), "utf-8"));
             String str;
-            while ((str = localBufferedReader.readLine()) != null) {
-                if (str.startsWith(paramString2)) {
+            while((str = localBufferedReader.readLine()) != null) {
+                if(str.startsWith(paramString2)) {
                     localStringBuffer.append(paramString2 + "=" + paramString3 + "\r\n");
                     i = 1;
                 }
@@ -687,24 +682,21 @@ public class FileUtil {
                     localStringBuffer.append(str + "\r\n");
                 }
             }
-            if (i == 0) {
+            if(i == 0) {
                 localStringBuffer.append(paramString2 + "=" + paramString3 + "\r\n");
             }
             writeFile(paramString1, localStringBuffer.toString(), "utf-8");
             boolean bool1 = true;
             return bool1;
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
             boolean bool2 = false;
             return bool2;
-        }
-        finally {
-            if (localBufferedReader != null) {
+        } finally {
+            if(localBufferedReader != null) {
                 try {
                     localBufferedReader.close();
-                }
-                catch (IOException localIOException3) {
+                } catch(IOException localIOException3) {
                     localIOException3.printStackTrace();
                 }
             }
@@ -717,26 +709,23 @@ public class FileUtil {
         try {
             localBufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(paramString1), "utf-8"));
             String str;
-            while ((str = localBufferedReader.readLine()) != null) {
-                if (!str.startsWith(paramString2)) {
+            while((str = localBufferedReader.readLine()) != null) {
+                if(!str.startsWith(paramString2)) {
                     localStringBuffer.append(str + "\r\n");
                 }
             }
             writeFile(paramString1, localStringBuffer.toString(), "utf-8");
             boolean bool1 = true;
             return bool1;
-        }
-        catch (Exception localException) {
+        } catch(Exception localException) {
             localException.printStackTrace();
             boolean bool2 = false;
             return bool2;
-        }
-        finally {
-            if (localBufferedReader != null) {
+        } finally {
+            if(localBufferedReader != null) {
                 try {
                     localBufferedReader.close();
-                }
-                catch (IOException localIOException3) {
+                } catch(IOException localIOException3) {
                     localIOException3.printStackTrace();
                 }
             }
@@ -745,7 +734,7 @@ public class FileUtil {
 
     public static List<Class<?>> getAllClassesByInterface(Class<?> paramClass, boolean paramBoolean)
             throws IOException, ClassNotFoundException, IllegalStateException {
-        if (!paramClass.isInterface()) {
+        if(!paramClass.isInterface()) {
             throw new IllegalStateException("Class not a interface.");
         }
         ClassLoader localClassLoader = paramClass.getClassLoader();
@@ -758,9 +747,9 @@ public class FileUtil {
         ArrayList localArrayList = new ArrayList();
         String str = paramString.replace(".", "/");
         Object localObject;
-        if (!str.equals("/")) {
+        if(!str.equals("/")) {
             localObject = paramClassLoader.getResources(str);
-            while (((Enumeration) localObject).hasMoreElements()) {
+            while(((Enumeration) localObject).hasMoreElements()) {
                 URL localURL = (URL) ((Enumeration) localObject).nextElement();
                 localArrayList.addAll(findResources(paramClass, new File(localURL.getFile()), paramString));
             }
@@ -775,14 +764,14 @@ public class FileUtil {
     private static List<Class<?>> findResources(Class<?> paramClass, File paramFile, String paramString)
             throws ClassNotFoundException {
         ArrayList localArrayList = new ArrayList();
-        if (!paramFile.exists()) {
+        if(!paramFile.exists()) {
             return Collections.EMPTY_LIST;
         }
         File[] arrayOfFile1 = paramFile.listFiles();
-        for (File localFile : arrayOfFile1) {
-            if (localFile.isDirectory()) {
-                if (!localFile.getName().contains(".")) {
-                    if (!paramString.equals("/")) {
+        for(File localFile : arrayOfFile1) {
+            if(localFile.isDirectory()) {
+                if(!localFile.getName().contains(".")) {
+                    if(!paramString.equals("/")) {
                         localArrayList.addAll(findResources(paramClass, localFile, paramString + "." + localFile.getName()));
                     }
                     else {
@@ -790,15 +779,15 @@ public class FileUtil {
                     }
                 }
             }
-            else if (localFile.getName().endsWith(".class")) {
+            else if(localFile.getName().endsWith(".class")) {
                 Class localClass = null;
-                if (!paramString.equals("/")) {
+                if(!paramString.equals("/")) {
                     localClass = Class.forName(paramString + "." + localFile.getName().substring(0, localFile.getName().length() - 6));
                 }
                 else {
                     localClass = Class.forName(localFile.getName().substring(0, localFile.getName().length() - 6));
                 }
-                if ((paramClass.isAssignableFrom(localClass)) && (!paramClass.equals(localClass))) {
+                if((paramClass.isAssignableFrom(localClass)) && (!paramClass.equals(localClass))) {
                     localArrayList.add(localClass);
                 }
             }
@@ -818,7 +807,7 @@ public class FileUtil {
 
     public static boolean isFileType(String paramString1, String paramString2) {
         boolean bool = false;
-        if (("IMAGE".equals(paramString2)) && ((paramString1.toUpperCase().equals("JPG")) || (paramString1.toUpperCase().equals("PNG")) || (paramString1.toUpperCase().equals("GIF")) || (paramString1.toUpperCase().equals("JPEG")))) {
+        if(("IMAGE".equals(paramString2)) && ((paramString1.toUpperCase().equals("JPG")) || (paramString1.toUpperCase().equals("PNG")) || (paramString1.toUpperCase().equals("GIF")) || (paramString1.toUpperCase().equals("JPEG")))) {
             bool = true;
         }
         return bool;
@@ -826,9 +815,9 @@ public class FileUtil {
 
     public static boolean isFileType(String paramString, String[] paramArrayOfString) {
         boolean bool = false;
-        if ((paramArrayOfString != null) && (paramArrayOfString.length > 0)) {
-            for (int i = 0; i < paramArrayOfString.length; i++) {
-                if (paramString.toUpperCase().equals(paramArrayOfString[i].toUpperCase())) {
+        if((paramArrayOfString != null) && (paramArrayOfString.length > 0)) {
+            for(int i = 0; i < paramArrayOfString.length; i++) {
+                if(paramString.toUpperCase().equals(paramArrayOfString[i].toUpperCase())) {
                     return true;
                 }
             }
